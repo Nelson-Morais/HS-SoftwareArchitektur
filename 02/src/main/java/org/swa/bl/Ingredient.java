@@ -3,24 +3,28 @@ package org.swa.bl;
 public class Ingredient {
 
     String name;
-    float menge;
+    float quantity;
 
 
-    Ingredient(String name, float menge) {
-        this.name = name;
-        this.menge = menge;
+    public Ingredient(){
+
     }
 
-    public float getMenge() {
-        return menge;
+    public Ingredient(String name, float quantity) {
+        this.name = name;
+        this.quantity = quantity;
+    }
+
+    public float getQuantity() {
+        return quantity;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setMenge(float menge) {
-        this.menge = menge;
+    public void setQuantity(float quantity) {
+        this.quantity = quantity;
     }
 
     public void setName(String name) {

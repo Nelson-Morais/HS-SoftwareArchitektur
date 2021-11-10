@@ -7,7 +7,7 @@ public class Mocktail {
     private ArrayList<Ingredient> ingredients;
     String name;
 
-    Mocktail(String name, ArrayList<Ingredient> ingredients) {
+    public Mocktail(String name, ArrayList<Ingredient> ingredients) {
         this.name = name;
         this.ingredients = ingredients;
 

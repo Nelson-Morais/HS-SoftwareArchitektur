@@ -1,6 +1,7 @@
 package org.swa.rest;
 
 import org.swa.al.MocktailController;
+import org.swa.bl.Ingredient;
 import org.swa.bl.Mocktail;
 
 import javax.inject.Inject;
@@ -35,6 +36,16 @@ public class MocktailResource {
     }
 
     @POST
+    //List geht nicht ????????!!?!?!??!!??!?!?!!
     public Response submitMocktail(@QueryParam("id") int id,
-                                   @QueryParam(""))
+                                   @QueryParam("name") String name) {
+
+
+        if(id != 0 && name != null){
+            mocktailController.addMocktail(id, name);
+            return Response.ok().build();
+        }
+
+        return Response.notModified().build();
+    }
 }

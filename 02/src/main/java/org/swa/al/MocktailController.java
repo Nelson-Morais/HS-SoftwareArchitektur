@@ -1,9 +1,15 @@
 package org.swa.al;
 
+import org.swa.bl.Ingredient;
 import org.swa.bl.Mocktail;
 
 import javax.inject.Singleton;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+
+
 
 @Singleton
 
@@ -27,8 +33,13 @@ public class MocktailController implements MocktailList, MocktailEdit, MocktailS
     }
 
     @Override
-    public void addMocktail(int id, Mocktail mocktail) {
-        mocktailManagement.addMocktail(id, mocktail);
+    public void addMocktail(int id, String name )  {
+
+        ArrayList<Ingredient> ingredients = new ArrayList<>();
+
+        Mocktail mocktail = new Mocktail(name,ingredients);
+
+        mocktailManagement.addMocktail(id,mocktail);
     }
 
     @Override
