@@ -1,0 +1,14 @@
+2021-11-17 16:21:44,105 ubuntudesktop code-with-quarkus-dev.jar[16946] DEBUG [org.mocktails.bou.res.MocktailResource] (executor-thread-0) 1637162504105 MocktailResource name-method started
+2021-11-17 16:21:44,107 ubuntudesktop code-with-quarkus-dev.jar[16946] DEBUG [org.mocktails.bou.res.MocktailResource] (executor-thread-0) 1637162504107 MocktailResource name-method ended
+2021-11-17 19:50:51,468 ubuntudesktop code-with-quarkus-dev.jar[24688] DEBUG [org.mocktails.bou.res.MocktailResource] (executor-thread-0) 1637175051468 MocktailResource getMocktails() started
+2021-11-17 19:50:51,471 ubuntudesktop code-with-quarkus-dev.jar[24688] INFO  [org.mocktails.bou.res.MocktailResource] (executor-thread-0) getting mocktails
+2021-11-17 19:50:51,471 ubuntudesktop code-with-quarkus-dev.jar[24688] DEBUG [org.mocktails.bou.res.MocktailResource] (executor-thread-0) 1637175051471 MocktailResource getMocktails() ended
+2021-11-17 22:01:14,261 ubuntudesktop code-with-quarkus-dev.jar[25687] WARNING [org.aes.rea.tty.ter.TerminalConnection] (Aesh InputStream Reader) Failed while reading, exiting: java.io.IOException: Input/output error
+	at java.base/java.io.FileInputStream.readBytes(Native Method)
+	at java.base/java.io.FileInputStream.read(FileInputStream.java:257)
+	at org.aesh.readline.tty.terminal.TerminalConnection.openBlocking(TerminalConnection.java:214)
+	at org.aesh.readline.tty.terminal.TerminalConnection.openBlocking(TerminalConnection.java:203)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+
