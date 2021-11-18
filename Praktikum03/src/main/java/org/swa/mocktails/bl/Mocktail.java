@@ -1,4 +1,4 @@
-package org.mocktails.bl;
+package org.swa.mocktails.bl;
 
 import java.util.ArrayList;
 

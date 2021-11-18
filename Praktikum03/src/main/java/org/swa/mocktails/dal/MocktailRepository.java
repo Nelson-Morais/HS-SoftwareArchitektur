@@ -1,7 +1,7 @@
-package org.mocktails.dal;
+package org.swa.mocktails.dal;
 
-import org.mocktails.bl.Mocktail;
-import org.mocktails.bl.Catalog;
+import org.swa.mocktails.bl.Mocktail;
+import org.swa.mocktails.bl.Catalog;
 
 import java.io.Serializable;
 import java.util.Collection;

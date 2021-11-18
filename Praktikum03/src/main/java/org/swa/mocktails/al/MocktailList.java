@@ -1,5 +1,5 @@
-package org.mocktails.al;
-import org.mocktails.bl.Mocktail;
+package org.swa.mocktails.al;
+import org.swa.mocktails.bl.Mocktail;
 import java.util.Collection;
 
 public interface MocktailList {

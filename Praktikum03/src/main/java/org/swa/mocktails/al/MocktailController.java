@@ -1,7 +1,7 @@
-package org.mocktails.al;
+package org.swa.mocktails.al;
 
 import org.eclipse.microprofile.faulttolerance.CircuitBreaker;
-import org.mocktails.bl.Mocktail;
+import org.swa.mocktails.bl.Mocktail;
 
 import javax.inject.Singleton;
 import java.util.Collection;

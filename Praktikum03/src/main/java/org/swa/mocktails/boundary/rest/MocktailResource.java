@@ -1,4 +1,4 @@
-package org.mocktails.boundary.rest;
+package org.swa.mocktails.boundary.rest;
 import org.eclipse.microprofile.faulttolerance.Fallback;
 import org.eclipse.microprofile.faulttolerance.Retry;
 import org.eclipse.microprofile.faulttolerance.Timeout;
@@ -11,8 +11,8 @@ import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
 import org.jboss.logging.Logger;
-import org.mocktails.al.MocktailController;
-import org.mocktails.bl.Mocktail;
+import org.swa.mocktails.al.MocktailController;
+import org.swa.mocktails.bl.Mocktail;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -49,7 +49,7 @@ public class MocktailResource {
         return mocktailController.getMocktails();
     }
 
-    @Fallback(fallbackMethod = "fallBackMethod")
+    //@Fallback(fallbackMethod = "fallBackMethod")
     @Retry(maxRetries = 5)
     @Timeout(250)
     @Counted(name = "mocktaiDetailId", description = "how many times a Mocktail was listed.")
@@ -75,7 +75,7 @@ public class MocktailResource {
         }
     }
 
-    @Fallback(fallbackMethod = "fallBackMethod")
+    //@Fallback(fallbackMethod = "fallBackMethod")
     @Retry(maxRetries = 5)
     @Timeout(250)
     @Counted(name = "mocktaiDetailName", description = "how many times a Mocktail was listed.")

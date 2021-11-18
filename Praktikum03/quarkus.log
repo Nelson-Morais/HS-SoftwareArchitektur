@@ -1,8 +1,8 @@
-2021-11-17 16:21:44,105 ubuntudesktop code-with-quarkus-dev.jar[16946] DEBUG [org.mocktails.bou.res.MocktailResource] (executor-thread-0) 1637162504105 MocktailResource name-method started
-2021-11-17 16:21:44,107 ubuntudesktop code-with-quarkus-dev.jar[16946] DEBUG [org.mocktails.bou.res.MocktailResource] (executor-thread-0) 1637162504107 MocktailResource name-method ended
-2021-11-17 19:50:51,468 ubuntudesktop code-with-quarkus-dev.jar[24688] DEBUG [org.mocktails.bou.res.MocktailResource] (executor-thread-0) 1637175051468 MocktailResource getMocktails() started
-2021-11-17 19:50:51,471 ubuntudesktop code-with-quarkus-dev.jar[24688] INFO  [org.mocktails.bou.res.MocktailResource] (executor-thread-0) getting mocktails
-2021-11-17 19:50:51,471 ubuntudesktop code-with-quarkus-dev.jar[24688] DEBUG [org.mocktails.bou.res.MocktailResource] (executor-thread-0) 1637175051471 MocktailResource getMocktails() ended
+2021-11-17 16:21:44,105 ubuntudesktop code-with-quarkus-dev.jar[16946] DEBUG [org.swa.mocktails.bou.res.MocktailResource] (executor-thread-0) 1637162504105 MocktailResource name-method started
+2021-11-17 16:21:44,107 ubuntudesktop code-with-quarkus-dev.jar[16946] DEBUG [org.swa.mocktails.bou.res.MocktailResource] (executor-thread-0) 1637162504107 MocktailResource name-method ended
+2021-11-17 19:50:51,468 ubuntudesktop code-with-quarkus-dev.jar[24688] DEBUG [org.swa.mocktails.bou.res.MocktailResource] (executor-thread-0) 1637175051468 MocktailResource getMocktails() started
+2021-11-17 19:50:51,471 ubuntudesktop code-with-quarkus-dev.jar[24688] INFO  [org.swa.mocktails.bou.res.MocktailResource] (executor-thread-0) getting mocktails
+2021-11-17 19:50:51,471 ubuntudesktop code-with-quarkus-dev.jar[24688] DEBUG [org.swa.mocktails.bou.res.MocktailResource] (executor-thread-0) 1637175051471 MocktailResource getMocktails() ended
 2021-11-17 22:01:14,261 ubuntudesktop code-with-quarkus-dev.jar[25687] WARNING [org.aes.rea.tty.ter.TerminalConnection] (Aesh InputStream Reader) Failed while reading, exiting: java.io.IOException: Input/output error
 	at java.base/java.io.FileInputStream.readBytes(Native Method)
 	at java.base/java.io.FileInputStream.read(FileInputStream.java:257)
@@ -11,4 +11,185 @@
 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
 	at java.base/java.lang.Thread.run(Thread.java:829)
+
+2021-11-18 10:46:58,016 ubuntudesktop code-with-quarkus-dev.jar[14066] ERROR [io.qua.run.Application] (Quarkus Main Thread) Failed to start application (with profile dev): javax.enterprise.inject.spi.DeploymentException: Found 2 deployment problems: 
+[1] Invalid @Fallback on org.swa.mocktails.boundary.rest.MocktailResource.getMocktailDetails(int): can't find fallback method fallBackMethod with same parameters as the method
+[2] Invalid @Fallback on org.swa.mocktails.boundary.rest.MocktailResource.getMocktailDetails(java.lang.String): can't find fallback method fallBackMethod with same parameters as the method
+	at io.quarkus.smallrye.faulttolerance.runtime.SmallRyeFaultToleranceRecorder.createFaultToleranceOperation(SmallRyeFaultToleranceRecorder.java:52)
+	at io.quarkus.deployment.steps.SmallRyeFaultToleranceProcessor$validateFaultToleranceAnnotations164456422.deploy_1(SmallRyeFaultToleranceProcessor$validateFaultToleranceAnnotations164456422.zig:3448)
+	at io.quarkus.deployment.steps.SmallRyeFaultToleranceProcessor$validateFaultToleranceAnnotations164456422.deploy(SmallRyeFaultToleranceProcessor$validateFaultToleranceAnnotations164456422.zig:45)
+	at io.quarkus.runner.ApplicationImpl.doStart(ApplicationImpl.zig:820)
+	at io.quarkus.runtime.Application.start(Application.java:101)
+	at io.quarkus.runtime.ApplicationLifecycleManager.run(ApplicationLifecycleManager.java:104)
+	at io.quarkus.runtime.Quarkus.run(Quarkus.java:67)
+	at io.quarkus.runtime.Quarkus.run(Quarkus.java:41)
+	at io.quarkus.runtime.Quarkus.run(Quarkus.java:120)
+	at io.quarkus.runner.GeneratedMain.main(GeneratedMain.zig:29)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at io.quarkus.runner.bootstrap.StartupActionImpl$1.run(StartupActionImpl.java:103)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+	Suppressed: org.eclipse.microprofile.faulttolerance.exceptions.FaultToleranceDefinitionException: Invalid @Fallback on org.swa.mocktails.boundary.rest.MocktailResource.getMocktailDetails(int): can't find fallback method fallBackMethod with same parameters as the method
+		at io.smallrye.faulttolerance.config.FallbackConfig.validate(FallbackConfig.java:44)
+		at io.smallrye.faulttolerance.config.FaultToleranceOperation.validate(FaultToleranceOperation.java:272)
+		at io.quarkus.smallrye.faulttolerance.runtime.SmallRyeFaultToleranceRecorder.createFaultToleranceOperation(SmallRyeFaultToleranceRecorder.java:28)
+		... 15 more
+	Suppressed: org.eclipse.microprofile.faulttolerance.exceptions.FaultToleranceDefinitionException: Invalid @Fallback on org.swa.mocktails.boundary.rest.MocktailResource.getMocktailDetails(java.lang.String): can't find fallback method fallBackMethod with same parameters as the method
+		at io.smallrye.faulttolerance.config.FallbackConfig.validate(FallbackConfig.java:44)
+		at io.smallrye.faulttolerance.config.FaultToleranceOperation.validate(FaultToleranceOperation.java:272)
+		at io.quarkus.smallrye.faulttolerance.runtime.SmallRyeFaultToleranceRecorder.createFaultToleranceOperation(SmallRyeFaultToleranceRecorder.java:28)
+		... 15 more
+
+2021-11-18 10:46:58,056 ubuntudesktop code-with-quarkus-dev.jar[14066] ERROR [io.qua.dep.dev.IsolatedDevModeMain] (main) Failed to start quarkus: java.lang.RuntimeException: java.lang.RuntimeException: Failed to start quarkus
+	at io.quarkus.dev.appstate.ApplicationStateNotification.waitForApplicationStart(ApplicationStateNotification.java:51)
+	at io.quarkus.runner.bootstrap.StartupActionImpl.runMainClass(StartupActionImpl.java:122)
+	at io.quarkus.deployment.dev.IsolatedDevModeMain.firstStart(IsolatedDevModeMain.java:143)
+	at io.quarkus.deployment.dev.IsolatedDevModeMain.accept(IsolatedDevModeMain.java:444)
+	at io.quarkus.deployment.dev.IsolatedDevModeMain.accept(IsolatedDevModeMain.java:65)
+	at io.quarkus.bootstrap.app.CuratedApplication.runInCl(CuratedApplication.java:149)
+	at io.quarkus.bootstrap.app.CuratedApplication.runInAugmentClassLoader(CuratedApplication.java:105)
+	at io.quarkus.deployment.dev.DevModeMain.start(DevModeMain.java:145)
+	at io.quarkus.deployment.dev.DevModeMain.main(DevModeMain.java:63)
+Caused by: java.lang.RuntimeException: Failed to start quarkus
+	at io.quarkus.runner.ApplicationImpl.doStart(ApplicationImpl.zig:946)
+	at io.quarkus.runtime.Application.start(Application.java:101)
+	at io.quarkus.runtime.ApplicationLifecycleManager.run(ApplicationLifecycleManager.java:104)
+	at io.quarkus.runtime.Quarkus.run(Quarkus.java:67)
+	at io.quarkus.runtime.Quarkus.run(Quarkus.java:41)
+	at io.quarkus.runtime.Quarkus.run(Quarkus.java:120)
+	at io.quarkus.runner.GeneratedMain.main(GeneratedMain.zig:29)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at io.quarkus.runner.bootstrap.StartupActionImpl$1.run(StartupActionImpl.java:103)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: javax.enterprise.inject.spi.DeploymentException: Found 2 deployment problems: 
+[1] Invalid @Fallback on org.swa.mocktails.boundary.rest.MocktailResource.getMocktailDetails(int): can't find fallback method fallBackMethod with same parameters as the method
+[2] Invalid @Fallback on org.swa.mocktails.boundary.rest.MocktailResource.getMocktailDetails(java.lang.String): can't find fallback method fallBackMethod with same parameters as the method
+	at io.quarkus.smallrye.faulttolerance.runtime.SmallRyeFaultToleranceRecorder.createFaultToleranceOperation(SmallRyeFaultToleranceRecorder.java:52)
+	at io.quarkus.deployment.steps.SmallRyeFaultToleranceProcessor$validateFaultToleranceAnnotations164456422.deploy_1(SmallRyeFaultToleranceProcessor$validateFaultToleranceAnnotations164456422.zig:3448)
+	at io.quarkus.deployment.steps.SmallRyeFaultToleranceProcessor$validateFaultToleranceAnnotations164456422.deploy(SmallRyeFaultToleranceProcessor$validateFaultToleranceAnnotations164456422.zig:45)
+	at io.quarkus.runner.ApplicationImpl.doStart(ApplicationImpl.zig:820)
+	... 12 more
+	Suppressed: org.eclipse.microprofile.faulttolerance.exceptions.FaultToleranceDefinitionException: Invalid @Fallback on org.swa.mocktails.boundary.rest.MocktailResource.getMocktailDetails(int): can't find fallback method fallBackMethod with same parameters as the method
+		at io.smallrye.faulttolerance.config.FallbackConfig.validate(FallbackConfig.java:44)
+		at io.smallrye.faulttolerance.config.FaultToleranceOperation.validate(FaultToleranceOperation.java:272)
+		at io.quarkus.smallrye.faulttolerance.runtime.SmallRyeFaultToleranceRecorder.createFaultToleranceOperation(SmallRyeFaultToleranceRecorder.java:28)
+		... 15 more
+	Suppressed: org.eclipse.microprofile.faulttolerance.exceptions.FaultToleranceDefinitionException: Invalid @Fallback on org.swa.mocktails.boundary.rest.MocktailResource.getMocktailDetails(java.lang.String): can't find fallback method fallBackMethod with same parameters as the method
+		at io.smallrye.faulttolerance.config.FallbackConfig.validate(FallbackConfig.java:44)
+		at io.smallrye.faulttolerance.config.FaultToleranceOperation.validate(FaultToleranceOperation.java:272)
+		at io.quarkus.smallrye.faulttolerance.runtime.SmallRyeFaultToleranceRecorder.createFaultToleranceOperation(SmallRyeFaultToleranceRecorder.java:28)
+		... 15 more
+
+2021-11-18 10:52:37,681 ubuntudesktop code-with-quarkus-dev.jar[14720] INFO  [org.swa.moc.bou.res.MocktailResource] (executor-thread-0) getting mocktails
+2021-11-18 11:00:32,156 ubuntudesktop code-with-quarkus-dev.jar[14720] ERROR [io.qua.ver.htt.run.QuarkusErrorHandler] (executor-thread-0) HTTP Request to /cocktails/1 failed, error id: cb92a410-0bd1-4a6c-9ba3-28c6dab602f7-1: org.jboss.resteasy.spi.UnhandledException: java.lang.RuntimeException: Error injecting org.swa.cocktails.control.CocktailController org.swa.cocktails.boundary.rest.CocktailResource.cocktailController
+	at org.jboss.resteasy.core.ExceptionHandler.handleException(ExceptionHandler.java:381)
+	at org.jboss.resteasy.core.SynchronousDispatcher.writeException(SynchronousDispatcher.java:218)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:519)
+	at org.jboss.resteasy.core.SynchronousDispatcher.lambda$invoke$4(SynchronousDispatcher.java:261)
+	at org.jboss.resteasy.core.SynchronousDispatcher.lambda$preprocess$0(SynchronousDispatcher.java:161)
+	at org.jboss.resteasy.core.interception.jaxrs.PreMatchContainerRequestContext.filter(PreMatchContainerRequestContext.java:364)
+	at org.jboss.resteasy.core.SynchronousDispatcher.preprocess(SynchronousDispatcher.java:164)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:247)
+	at io.quarkus.resteasy.runtime.standalone.RequestDispatcher.service(RequestDispatcher.java:73)
+	at io.quarkus.resteasy.runtime.standalone.VertxRequestHandler.dispatch(VertxRequestHandler.java:135)
+	at io.quarkus.resteasy.runtime.standalone.VertxRequestHandler$1.run(VertxRequestHandler.java:90)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$13.runWith(VertxCoreRecorder.java:543)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2449)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1478)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.RuntimeException: Error injecting org.swa.cocktails.control.CocktailController org.swa.cocktails.boundary.rest.CocktailResource.cocktailController
+	at org.swa.cocktails.boundary.rest.CocktailResource_Bean.create(CocktailResource_Bean.zig:177)
+	at org.swa.cocktails.boundary.rest.CocktailResource_Bean.create(CocktailResource_Bean.zig:200)
+	at io.quarkus.arc.impl.AbstractSharedContext.createInstanceHandle(AbstractSharedContext.java:96)
+	at io.quarkus.arc.impl.AbstractSharedContext$1.get(AbstractSharedContext.java:29)
+	at io.quarkus.arc.impl.AbstractSharedContext$1.get(AbstractSharedContext.java:26)
+	at io.quarkus.arc.impl.LazyValue.get(LazyValue.java:26)
+	at io.quarkus.arc.impl.ComputingCache.computeIfAbsent(ComputingCache.java:69)
+	at io.quarkus.arc.impl.AbstractSharedContext.get(AbstractSharedContext.java:26)
+	at org.swa.cocktails.boundary.rest.CocktailResource_Bean.get(CocktailResource_Bean.zig:232)
+	at org.swa.cocktails.boundary.rest.CocktailResource_Bean.get(CocktailResource_Bean.zig:248)
+	at io.quarkus.arc.impl.ArcContainerImpl.beanInstanceHandle(ArcContainerImpl.java:440)
+	at io.quarkus.arc.impl.ArcContainerImpl.beanInstanceHandle(ArcContainerImpl.java:453)
+	at io.quarkus.arc.impl.ArcContainerImpl$1.get(ArcContainerImpl.java:276)
+	at io.quarkus.arc.impl.ArcContainerImpl$1.get(ArcContainerImpl.java:273)
+	at io.quarkus.resteasy.common.runtime.QuarkusConstructorInjector.construct(QuarkusConstructorInjector.java:52)
+	at org.jboss.resteasy.plugins.server.resourcefactory.POJOResourceFactory.createResource(POJOResourceFactory.java:71)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:401)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:69)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:492)
+	... 15 more
+Caused by: java.lang.IllegalStateException: Neither baseUri nor baseUrl was specified
+	at io.quarkus.restclient.runtime.QuarkusRestClientBuilder.build(QuarkusRestClientBuilder.java:242)
+	at org.swa.cocktails.control.CocktailController.<init>(CocktailController.java:13)
+	at org.swa.cocktails.control.CocktailController_Subclass.<init>(CocktailController_Subclass.zig:31)
+	at org.swa.cocktails.control.CocktailController_Bean.create(CocktailController_Bean.zig:113)
+	at org.swa.cocktails.control.CocktailController_Bean.create(CocktailController_Bean.zig:129)
+	at io.quarkus.arc.impl.AbstractSharedContext.createInstanceHandle(AbstractSharedContext.java:96)
+	at io.quarkus.arc.impl.AbstractSharedContext$1.get(AbstractSharedContext.java:29)
+	at io.quarkus.arc.impl.AbstractSharedContext$1.get(AbstractSharedContext.java:26)
+	at io.quarkus.arc.impl.LazyValue.get(LazyValue.java:26)
+	at io.quarkus.arc.impl.ComputingCache.computeIfAbsent(ComputingCache.java:69)
+	at io.quarkus.arc.impl.AbstractSharedContext.get(AbstractSharedContext.java:26)
+	at org.swa.cocktails.control.CocktailController_Bean.get(CocktailController_Bean.zig:161)
+	at org.swa.cocktails.control.CocktailController_Bean.get(CocktailController_Bean.zig:177)
+	at org.swa.cocktails.boundary.rest.CocktailResource_Bean.create(CocktailResource_Bean.zig:160)
+	... 33 more
+
+2021-11-18 11:06:55,837 ubuntudesktop code-with-quarkus-dev.jar[16118] ERROR [io.qua.ver.htt.run.QuarkusErrorHandler] (executor-thread-0) HTTP Request to /cocktails/1 failed, error id: a6bf1c71-1cff-4a86-8181-36dbe3c2b983-1: org.jboss.resteasy.spi.UnhandledException: java.lang.RuntimeException: Error injecting org.swa.cocktails.control.CocktailController org.swa.cocktails.boundary.rest.CocktailResource.cocktailController
+	at org.jboss.resteasy.core.ExceptionHandler.handleException(ExceptionHandler.java:381)
+	at org.jboss.resteasy.core.SynchronousDispatcher.writeException(SynchronousDispatcher.java:218)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:519)
+	at org.jboss.resteasy.core.SynchronousDispatcher.lambda$invoke$4(SynchronousDispatcher.java:261)
+	at org.jboss.resteasy.core.SynchronousDispatcher.lambda$preprocess$0(SynchronousDispatcher.java:161)
+	at org.jboss.resteasy.core.interception.jaxrs.PreMatchContainerRequestContext.filter(PreMatchContainerRequestContext.java:364)
+	at org.jboss.resteasy.core.SynchronousDispatcher.preprocess(SynchronousDispatcher.java:164)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:247)
+	at io.quarkus.resteasy.runtime.standalone.RequestDispatcher.service(RequestDispatcher.java:73)
+	at io.quarkus.resteasy.runtime.standalone.VertxRequestHandler.dispatch(VertxRequestHandler.java:135)
+	at io.quarkus.resteasy.runtime.standalone.VertxRequestHandler$1.run(VertxRequestHandler.java:90)
+	at io.quarkus.vertx.core.runtime.VertxCoreRecorder$13.runWith(VertxCoreRecorder.java:543)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2449)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1478)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:29)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:29)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:829)
+Caused by: java.lang.RuntimeException: Error injecting org.swa.cocktails.control.CocktailController org.swa.cocktails.boundary.rest.CocktailResource.cocktailController
+	at org.swa.cocktails.boundary.rest.CocktailResource_Bean.create(CocktailResource_Bean.zig:177)
+	at org.swa.cocktails.boundary.rest.CocktailResource_Bean.create(CocktailResource_Bean.zig:200)
+	at io.quarkus.arc.impl.AbstractSharedContext.createInstanceHandle(AbstractSharedContext.java:96)
+	at io.quarkus.arc.impl.AbstractSharedContext$1.get(AbstractSharedContext.java:29)
+	at io.quarkus.arc.impl.AbstractSharedContext$1.get(AbstractSharedContext.java:26)
+	at io.quarkus.arc.impl.LazyValue.get(LazyValue.java:26)
+	at io.quarkus.arc.impl.ComputingCache.computeIfAbsent(ComputingCache.java:69)
+	at io.quarkus.arc.impl.AbstractSharedContext.get(AbstractSharedContext.java:26)
+	at org.swa.cocktails.boundary.rest.CocktailResource_Bean.get(CocktailResource_Bean.zig:232)
+	at org.swa.cocktails.boundary.rest.CocktailResource_Bean.get(CocktailResource_Bean.zig:248)
+	at io.quarkus.arc.impl.ArcContainerImpl.beanInstanceHandle(ArcContainerImpl.java:440)
+	at io.quarkus.arc.impl.ArcContainerImpl.beanInstanceHandle(ArcContainerImpl.java:453)
+	at io.quarkus.arc.impl.ArcContainerImpl$1.get(ArcContainerImpl.java:276)
+	at io.quarkus.arc.impl.ArcContainerImpl$1.get(ArcContainerImpl.java:273)
+	at io.quarkus.resteasy.common.runtime.QuarkusConstructorInjector.construct(QuarkusConstructorInjector.java:52)
+	at org.jboss.resteasy.plugins.server.resourcefactory.POJOResourceFactory.createResource(POJOResourceFactory.java:71)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:401)
+	at org.jboss.resteasy.core.ResourceMethodInvoker.invoke(ResourceMethodInvoker.java:69)
+	at org.jboss.resteasy.core.SynchronousDispatcher.invoke(SynchronousDispatcher.java:492)
+	... 15 more
+Caused by: java.lang.IllegalStateException: Neither baseUri nor baseUrl was specified
+	at io.quarkus.restclient.runtime.QuarkusRestClientBuilder.build(QuarkusRestClientBuilder.java:242)
+	at org.swa.cocktails.control.CocktailController.<init>(CocktailController.java:15)
+	at org.swa.cocktails.control.CocktailController_ClientProxy.<init>(CocktailController_ClientProxy.zig:24)
+	at org.swa.cocktails.control.CocktailController_Bean.proxy(CocktailController_Bean.zig:40)
+	at org.swa.cocktails.control.CocktailController_Bean.get(CocktailController_Bean.zig:179)
+	at org.swa.cocktails.control.CocktailController_Bean.get(CocktailController_Bean.zig:195)
+	at org.swa.cocktails.boundary.rest.CocktailResource_Bean.create(CocktailResource_Bean.zig:160)
+	... 33 more
 

@@ -1,9 +1,9 @@
-package org.mocktails.al;
+package org.swa.mocktails.al;
 
-import org.mocktails.bl.Ingredient;
-import org.mocktails.bl.Catalog;
-import org.mocktails.bl.Mocktail;
-import org.mocktails.dal.MocktailRepository;
+import org.swa.mocktails.bl.Ingredient;
+import org.swa.mocktails.bl.Catalog;
+import org.swa.mocktails.bl.Mocktail;
+import org.swa.mocktails.dal.MocktailRepository;
 
 import java.util.ArrayList;
 import java.util.Collection;

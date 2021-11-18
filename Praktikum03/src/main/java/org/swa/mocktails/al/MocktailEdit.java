@@ -1,4 +1,4 @@
-package org.mocktails.al;
+package org.swa.mocktails.al;
 
 
 public interface MocktailEdit {

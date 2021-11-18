@@ -1,4 +1,4 @@
-package org.mocktails.bl;
+package org.swa.mocktails.bl;
 
 public class Ingredient {
 

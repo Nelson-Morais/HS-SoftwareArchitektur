@@ -1,4 +1,4 @@
-package org.mocktails.config;
+package org.swa.mocktails.config;
 
 
 import org.eclipse.microprofile.openapi.annotations.OpenAPIDefinition;
@@ -12,6 +12,7 @@ import javax.ws.rs.core.Application;
 @OpenAPIDefinition(
         tags = {
                 @Tag(name = "Mocktail Resource", description = "Mocktail Management interface."),
+                @Tag(name = "Cocktail Resource", description = "Cocktail Management interface.")
         },
         info = @Info(
                 title = "Mocktail app API with Quarkus",
