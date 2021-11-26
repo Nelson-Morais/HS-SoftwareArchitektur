@@ -3,6 +3,7 @@ package org.swa.dal;
 import org.swa.bl.Team;
 import org.swa.bl.TeamsCatalog;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
 import java.util.Collection;
 import java.util.Map;
@@ -13,6 +14,13 @@ import java.util.concurrent.ConcurrentHashMap;
 public class TeamsRepository implements TeamsCatalog {
 
     Map<Integer, Team> teams = new ConcurrentHashMap<>();
+
+
+
+    public TeamsRepository(){
+
+    }
+
 
 
     @Override

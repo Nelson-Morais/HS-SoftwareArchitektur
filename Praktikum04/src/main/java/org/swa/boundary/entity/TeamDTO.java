@@ -7,7 +7,8 @@ public class TeamDTO {
     public TeamDTO(){}
 
     public TeamDTO(String name, String category){
-
+        setName(name);
+        setCategory(category);
     }
 
     public String getName() {

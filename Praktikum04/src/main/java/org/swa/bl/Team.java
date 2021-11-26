@@ -13,8 +13,8 @@ public class Team {
 
     public Team(){}
 
-    public Team(int id, String name, String category){
-        this.id = id;
+    public Team(String name, String category){
+
         this.name = name;
         this.category = category;
         this.coach = null;
