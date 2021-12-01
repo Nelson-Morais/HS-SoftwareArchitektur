@@ -1,0 +1,844 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>0</x>
+      <y>423</y>
+      <w>783</w>
+      <h>819</h>
+    </coordinates>
+    <panel_attributes>boundary
+--
+bg=orange
+layer=-2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>252</x>
+      <y>567</y>
+      <w>450</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>AssignmentResource
+--
+getAssignment(id : int) : JSONObject
+createAssignment(assignement : JSONObject) : JSONObject
+editAssignment(assignment : JSONObject) : JSONObject
+deleteAssignment(id : int) : JSONObject
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>27</x>
+      <y>486</y>
+      <w>711</w>
+      <h>702</h>
+    </coordinates>
+    <panel_attributes>rest
+--
+bg=orange
+layer=-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>909</x>
+      <y>468</y>
+      <w>774</w>
+      <h>333</h>
+    </coordinates>
+    <panel_attributes>al
+--
+bg=orange
+layer=-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>945</x>
+      <y>513</y>
+      <w>189</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>interface
+ListAssignment
+--
++getAssignment()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>945</x>
+      <y>603</y>
+      <w>189</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>interface
+AddAssignment
+--
++createAssignment()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>945</x>
+      <y>693</y>
+      <w>189</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>interface
+ModifyAssignment
+--
++editAssignment()
++deleteAssignment()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>891</x>
+      <y>414</y>
+      <w>1674</w>
+      <h>450</h>
+    </coordinates>
+    <panel_attributes>assignments
+--
+bg=orange
+layer=-2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1206</x>
+      <y>603</y>
+      <w>153</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>AssignmentController
+--</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1431</x>
+      <y>594</y>
+      <w>189</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>service
+AssignmentService
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>693</x>
+      <y>621</y>
+      <w>270</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>280.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>837</x>
+      <y>540</y>
+      <w>126</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>837</x>
+      <y>612</y>
+      <w>126</w>
+      <h>135</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>120.0;130.0;10.0;130.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1125</x>
+      <y>630</y>
+      <w>99</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1125</x>
+      <y>540</y>
+      <w>63</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0;50.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1125</x>
+      <y>630</y>
+      <w>63</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;120.0;50.0;120.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1350</x>
+      <y>630</y>
+      <w>99</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>1368</x>
+      <y>630</y>
+      <w>18</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>type=termination</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>711</x>
+      <y>621</y>
+      <w>18</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>type=termination
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1764</x>
+      <y>468</y>
+      <w>693</w>
+      <h>333</h>
+    </coordinates>
+    <panel_attributes>bl
+--
+bg=orange
+layer=-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1791</x>
+      <y>567</y>
+      <w>342</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>interface
+AssignmentCatalog
+--
++getAssignment(id : int) : Assignment
++createAssignment( assignment : Assignment )
++editAssignment( assignment : Assignment )
++deleteAssignment ( assignment : Assignment )
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2187</x>
+      <y>567</y>
+      <w>189</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>Entity
+Assignment
+--
+id : int
+desctiption : String
+date : Date</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1611</x>
+      <y>648</y>
+      <w>198</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>200.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1611</x>
+      <y>603</y>
+      <w>198</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;..
+Event</panel_attributes>
+    <additional_attributes>200.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>891</x>
+      <y>9</y>
+      <w>1674</w>
+      <h>333</h>
+    </coordinates>
+    <panel_attributes>Generators
+--
+bg=orange
+layer=-2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>936</x>
+      <y>63</y>
+      <w>747</w>
+      <h>252</h>
+    </coordinates>
+    <panel_attributes>id
+--
+bg=orange
+layer=-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1017</x>
+      <y>135</y>
+      <w>189</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>class
+IdGeneratorAssignment
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1404</x>
+      <y>135</y>
+      <w>189</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>class
+IdGeneratorShip
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1215</x>
+      <y>225</y>
+      <w>189</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>interface
+IdGenerator
+--
++getId() : int</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1197</x>
+      <y>162</y>
+      <w>171</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.
+realizes</panel_attributes>
+    <additional_attributes>120.0;70.0;120.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1296</x>
+      <y>162</y>
+      <w>126</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1287</x>
+      <y>279</y>
+      <w>252</w>
+      <h>333</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+-idGenerator</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0;260.0;100.0;260.0;350.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1791</x>
+      <y>81</y>
+      <w>702</w>
+      <h>234</h>
+    </coordinates>
+    <panel_attributes>uri
+--
+bg=orange
+layer=-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2088</x>
+      <y>162</y>
+      <w>189</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>UriGenerator
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>2709</x>
+      <y>414</y>
+      <w>324</w>
+      <h>837</h>
+    </coordinates>
+    <panel_attributes>dal
+--
+bg=orange
+layer=-2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2790</x>
+      <y>585</y>
+      <w>189</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Repository
+AssignmentRepo
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1935</x>
+      <y>495</y>
+      <w>963</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+realizes</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;20.0;1050.0;20.0;1050.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2367</x>
+      <y>603</y>
+      <w>441</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+manages</panel_attributes>
+    <additional_attributes>10.0;20.0;470.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>882</x>
+      <y>891</y>
+      <w>1683</w>
+      <h>351</h>
+    </coordinates>
+    <panel_attributes>ships
+
+--
+bg=orange
+layer=-2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>45</x>
+      <y>981</y>
+      <w>189</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>ShipDTO
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>45</x>
+      <y>567</y>
+      <w>189</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>AssignmentDTO
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>252</x>
+      <y>981</y>
+      <w>450</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>ShipResource
+--
+getShip(id : int) : JSONObject
+createShip(ship : JSONObject) : JSONObject
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>936</x>
+      <y>981</y>
+      <w>189</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>interface
+ListShip
+--
+getShip(id : int)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>936</x>
+      <y>1089</y>
+      <w>189</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>interface
+AddShip
+--
+createShip(ship : Ship)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>909</x>
+      <y>936</y>
+      <w>765</w>
+      <h>270</h>
+    </coordinates>
+    <panel_attributes>al
+--
+bg=orange
+layer=-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1188</x>
+      <y>1035</y>
+      <w>153</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>ShipController
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1404</x>
+      <y>1026</y>
+      <w>189</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>service
+ShipService
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLPackage</id>
+    <coordinates>
+      <x>1755</x>
+      <y>945</y>
+      <w>693</w>
+      <h>261</h>
+    </coordinates>
+    <panel_attributes>EmptyPackage
+--
+bg=orange
+layer=-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1800</x>
+      <y>1035</y>
+      <w>189</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>interface
+ShipCatalog
+--
++getShip(id : int) : Ship
++createShip(ship : Ship)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2160</x>
+      <y>1026</y>
+      <w>189</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>Entity
+Ship
+--
+id : int
+name : String
+AssignmentState : boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>2772</x>
+      <y>1053</y>
+      <w>189</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>Repository
+ShipRepo
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2340</x>
+      <y>1071</y>
+      <w>450</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+manages</panel_attributes>
+    <additional_attributes>10.0;20.0;480.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1890</x>
+      <y>963</y>
+      <w>963</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-
+realizes</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;20.0;1050.0;20.0;1050.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1584</x>
+      <y>1044</y>
+      <w>234</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;..
+Event</panel_attributes>
+    <additional_attributes>240.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1584</x>
+      <y>1080</y>
+      <w>234</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>240.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1332</x>
+      <y>1062</y>
+      <w>90</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>80.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>1341</x>
+      <y>1062</y>
+      <w>18</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>type=termination</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1287</x>
+      <y>279</y>
+      <w>477</w>
+      <h>765</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0;510.0;100.0;510.0;660.0;270.0;660.0;270.0;830.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1116</x>
+      <y>999</y>
+      <w>90</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0;50.0;80.0;80.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1116</x>
+      <y>1062</y>
+      <w>63</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;90.0;50.0;90.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>126</x>
+      <y>369</y>
+      <w>1377</w>
+      <h>243</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+uses</panel_attributes>
+    <additional_attributes>10.0;220.0;10.0;20.0;1510.0;20.0;1510.0;250.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>144</x>
+      <y>1098</y>
+      <w>1377</w>
+      <h>189</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+uses</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;190.0;1510.0;190.0;1510.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>693</x>
+      <y>1008</y>
+      <w>261</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>270.0;10.0;80.0;10.0;80.0;50.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>693</x>
+      <y>1044</y>
+      <w>261</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>270.0;80.0;80.0;80.0;80.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLSpecialState</id>
+    <coordinates>
+      <x>711</x>
+      <y>1044</y>
+      <w>18</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>type=termination</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
