@@ -1,13 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.3.0">
-  <zoom_level>9</zoom_level>
+  <help_text>
+// Uncomment the following line to change the fontsize and font:
+// fontsize=14
+// fontfamily=SansSerif //possible: SansSerif,Serif,Monospaced
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+// Welcome to UMLet!
+//
+// Double-click on elements to add them to the diagram, or to copy them
+// Edit elements by modifying the text in this panel
+// Hold Ctrl to select multiple elements
+// Use Ctrl+mouse to select via lasso
+//
+// Use +/- or Ctrl+mouse wheel to zoom
+// Drag a whole relation at its central square icon
+//
+// Press Ctrl+C to copy the whole diagram to the system clipboard (then just paste it to, eg, Word)
+// Edit the files in the "palettes" directory to create your own element palettes
+//
+// Select "Custom Elements &gt; New..." to create new element types
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// This text will be stored with each diagram;  use it for notes.</help_text>
+  <zoom_level>6</zoom_level>
   <element>
     <id>UMLPackage</id>
     <coordinates>
       <x>0</x>
-      <y>423</y>
-      <w>783</w>
-      <h>819</h>
+      <y>390</y>
+      <w>522</w>
+      <h>546</h>
     </coordinates>
     <panel_attributes>boundary
 --
@@ -18,10 +43,10 @@ layer=-2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>252</x>
-      <y>567</y>
-      <w>450</w>
-      <h>126</h>
+      <x>168</x>
+      <y>486</y>
+      <w>300</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>AssignmentResource
 --
@@ -35,10 +60,10 @@ deleteAssignment(id : int) : JSONObject
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>27</x>
-      <y>486</y>
-      <w>711</w>
-      <h>702</h>
+      <x>18</x>
+      <y>432</y>
+      <w>474</w>
+      <h>468</h>
     </coordinates>
     <panel_attributes>rest
 --
@@ -49,10 +74,10 @@ layer=-1</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>909</x>
-      <y>468</y>
-      <w>774</w>
-      <h>333</h>
+      <x>606</x>
+      <y>420</y>
+      <w>516</w>
+      <h>222</h>
     </coordinates>
     <panel_attributes>al
 --
@@ -63,10 +88,10 @@ layer=-1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>945</x>
-      <y>513</y>
-      <w>189</w>
-      <h>63</h>
+      <x>630</x>
+      <y>450</y>
+      <w>138</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>interface
 ListAssignment
@@ -77,10 +102,10 @@ ListAssignment
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>945</x>
-      <y>603</y>
-      <w>189</w>
-      <h>63</h>
+      <x>630</x>
+      <y>510</y>
+      <w>138</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>interface
 AddAssignment
@@ -91,25 +116,25 @@ AddAssignment
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>945</x>
-      <y>693</y>
-      <w>189</w>
-      <h>81</h>
+      <x>630</x>
+      <y>570</y>
+      <w>138</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>interface
 ModifyAssignment
 --
 +editAssignment()
-+deleteAssignment()</panel_attributes>
++deleteAssignment() : boolean</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>891</x>
-      <y>414</y>
-      <w>1674</w>
-      <h>450</h>
+      <x>594</x>
+      <y>384</y>
+      <w>1116</w>
+      <h>300</h>
     </coordinates>
     <panel_attributes>assignments
 --
@@ -120,10 +145,10 @@ layer=-2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1206</x>
-      <y>603</y>
-      <w>153</w>
-      <h>63</h>
+      <x>816</x>
+      <y>510</y>
+      <w>102</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>AssignmentController
 --</panel_attributes>
@@ -132,10 +157,10 @@ layer=-2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1431</x>
-      <y>594</y>
-      <w>189</w>
-      <h>81</h>
+      <x>954</x>
+      <y>504</y>
+      <w>126</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>service
 AssignmentService
@@ -146,10 +171,10 @@ AssignmentService
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>693</x>
-      <y>621</y>
-      <w>270</w>
-      <h>27</h>
+      <x>462</x>
+      <y>522</y>
+      <w>180</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>280.0;10.0;10.0;10.0</additional_attributes>
@@ -157,10 +182,10 @@ AssignmentService
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>837</x>
-      <y>540</y>
-      <w>126</w>
-      <h>99</h>
+      <x>558</x>
+      <y>468</y>
+      <w>84</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>120.0;10.0;10.0;10.0;10.0;90.0</additional_attributes>
@@ -168,10 +193,10 @@ AssignmentService
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>837</x>
-      <y>612</y>
-      <w>126</w>
-      <h>135</h>
+      <x>558</x>
+      <y>516</y>
+      <w>84</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>120.0;130.0;10.0;130.0;10.0;10.0</additional_attributes>
@@ -179,10 +204,10 @@ AssignmentService
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1125</x>
-      <y>630</y>
-      <w>99</w>
-      <h>27</h>
+      <x>762</x>
+      <y>528</y>
+      <w>66</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;90.0;10.0</additional_attributes>
@@ -190,43 +215,43 @@ AssignmentService
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1125</x>
-      <y>540</y>
-      <w>63</w>
-      <h>117</h>
+      <x>762</x>
+      <y>468</y>
+      <w>30</w>
+      <h>78</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;50.0;10.0;50.0;110.0</additional_attributes>
+    <additional_attributes>10.0;10.0;30.0;10.0;30.0;110.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1125</x>
-      <y>630</y>
-      <w>63</w>
-      <h>126</h>
+      <x>762</x>
+      <y>528</y>
+      <w>30</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;120.0;50.0;120.0;50.0;10.0</additional_attributes>
+    <additional_attributes>10.0;120.0;30.0;120.0;30.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1350</x>
-      <y>630</y>
-      <w>99</w>
-      <h>27</h>
+      <x>912</x>
+      <y>528</y>
+      <w>54</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>70.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>1368</x>
-      <y>630</y>
-      <w>18</w>
-      <h>18</h>
+      <x>912</x>
+      <y>528</y>
+      <w>12</w>
+      <h>12</h>
     </coordinates>
     <panel_attributes>type=termination</panel_attributes>
     <additional_attributes/>
@@ -234,10 +259,10 @@ AssignmentService
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>711</x>
-      <y>621</y>
-      <w>18</w>
-      <h>18</h>
+      <x>474</x>
+      <y>522</y>
+      <w>12</w>
+      <h>12</h>
     </coordinates>
     <panel_attributes>type=termination
 layer=1</panel_attributes>
@@ -246,10 +271,10 @@ layer=1</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>1764</x>
-      <y>468</y>
-      <w>693</w>
-      <h>333</h>
+      <x>1176</x>
+      <y>420</y>
+      <w>462</w>
+      <h>222</h>
     </coordinates>
     <panel_attributes>bl
 --
@@ -260,44 +285,46 @@ layer=-1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1791</x>
-      <y>567</y>
-      <w>342</w>
-      <h>117</h>
+      <x>1194</x>
+      <y>486</y>
+      <w>228</w>
+      <h>78</h>
     </coordinates>
     <panel_attributes>interface
 AssignmentCatalog
 --
-+getAssignment(id : int) : Assignment
-+createAssignment( assignment : Assignment )
-+editAssignment( assignment : Assignment )
-+deleteAssignment ( assignment : Assignment )
++getAssignment(id : int) : AssignmentEntity
++createAssignment( assignment : AssignmentEntity )
++editAssignment( assignment : AssignmentEntity )
++deleteAssignment (id : int)
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2187</x>
-      <y>567</y>
-      <w>189</w>
-      <h>117</h>
+      <x>1458</x>
+      <y>486</y>
+      <w>126</w>
+      <h>78</h>
     </coordinates>
     <panel_attributes>Entity
-Assignment
+AssignmentEntity
 --
 id : int
 desctiption : String
-date : Date</panel_attributes>
+date : Date
+ship: URI
+</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1611</x>
-      <y>648</y>
-      <w>198</w>
-      <h>27</h>
+      <x>1074</x>
+      <y>540</y>
+      <w>132</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>200.0;10.0;10.0;10.0</additional_attributes>
@@ -305,10 +332,10 @@ date : Date</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1611</x>
-      <y>603</y>
-      <w>198</w>
-      <h>36</h>
+      <x>1074</x>
+      <y>510</y>
+      <w>132</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;..
 Event</panel_attributes>
@@ -317,10 +344,10 @@ Event</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>891</x>
-      <y>9</y>
-      <w>1674</w>
-      <h>333</h>
+      <x>594</x>
+      <y>114</y>
+      <w>1116</w>
+      <h>222</h>
     </coordinates>
     <panel_attributes>Generators
 --
@@ -331,10 +358,10 @@ layer=-2</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>936</x>
-      <y>63</y>
-      <w>747</w>
-      <h>252</h>
+      <x>624</x>
+      <y>150</y>
+      <w>498</w>
+      <h>168</h>
     </coordinates>
     <panel_attributes>id
 --
@@ -345,10 +372,10 @@ layer=-1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1017</x>
-      <y>135</y>
-      <w>189</w>
-      <h>63</h>
+      <x>678</x>
+      <y>198</y>
+      <w>126</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>class
 IdGeneratorAssignment
@@ -359,10 +386,10 @@ IdGeneratorAssignment
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1404</x>
-      <y>135</y>
-      <w>189</w>
-      <h>63</h>
+      <x>936</x>
+      <y>198</y>
+      <w>126</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>class
 IdGeneratorShip
@@ -373,10 +400,10 @@ IdGeneratorShip
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1215</x>
-      <y>225</y>
-      <w>189</w>
-      <h>63</h>
+      <x>810</x>
+      <y>258</y>
+      <w>126</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>interface
 IdGenerator
@@ -387,10 +414,10 @@ IdGenerator
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1197</x>
-      <y>162</y>
-      <w>171</w>
-      <h>81</h>
+      <x>798</x>
+      <y>216</y>
+      <w>114</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.
 realizes</panel_attributes>
@@ -399,10 +426,10 @@ realizes</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1296</x>
-      <y>162</y>
-      <w>126</w>
-      <h>81</h>
+      <x>864</x>
+      <y>216</y>
+      <w>84</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;70.0;10.0;10.0;120.0;10.0</additional_attributes>
@@ -410,10 +437,10 @@ realizes</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1287</x>
-      <y>279</y>
-      <w>252</w>
-      <h>333</h>
+      <x>858</x>
+      <y>294</y>
+      <w>168</w>
+      <h>222</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 -idGenerator</panel_attributes>
@@ -422,10 +449,10 @@ realizes</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>1791</x>
-      <y>81</y>
-      <w>702</w>
-      <h>234</h>
+      <x>1194</x>
+      <y>162</y>
+      <w>468</w>
+      <h>156</h>
     </coordinates>
     <panel_attributes>uri
 --
@@ -436,10 +463,10 @@ layer=-1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2088</x>
-      <y>162</y>
-      <w>189</w>
-      <h>63</h>
+      <x>1362</x>
+      <y>216</y>
+      <w>126</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>UriGenerator
 --
@@ -449,10 +476,10 @@ layer=-1</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>2709</x>
-      <y>414</y>
-      <w>324</w>
-      <h>837</h>
+      <x>1806</x>
+      <y>384</y>
+      <w>216</w>
+      <h>558</h>
     </coordinates>
     <panel_attributes>dal
 --
@@ -463,10 +490,10 @@ layer=-2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2790</x>
-      <y>585</y>
-      <w>189</w>
-      <h>63</h>
+      <x>1860</x>
+      <y>498</y>
+      <w>126</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>Repository
 AssignmentRepo
@@ -477,22 +504,22 @@ AssignmentRepo
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1935</x>
-      <y>495</y>
-      <w>963</w>
-      <h>108</h>
+      <x>1290</x>
+      <y>438</y>
+      <w>642</w>
+      <h>72</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-
+    <panel_attributes>lt=&lt;&lt;.
 realizes</panel_attributes>
     <additional_attributes>10.0;80.0;10.0;20.0;1050.0;20.0;1050.0;100.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2367</x>
-      <y>603</y>
-      <w>441</w>
-      <h>36</h>
+      <x>1578</x>
+      <y>510</y>
+      <w>294</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 manages</panel_attributes>
@@ -501,10 +528,10 @@ manages</panel_attributes>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>882</x>
-      <y>891</y>
-      <w>1683</w>
-      <h>351</h>
+      <x>594</x>
+      <y>702</y>
+      <w>1116</w>
+      <h>234</h>
     </coordinates>
     <panel_attributes>ships
 
@@ -516,36 +543,42 @@ layer=-2</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>45</x>
-      <y>981</y>
-      <w>189</w>
-      <h>126</h>
+      <x>30</x>
+      <y>762</y>
+      <w>126</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>ShipDTO
 --
-</panel_attributes>
+id : int
+name : String
+assignmentStatus : boolean</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>45</x>
-      <y>567</y>
-      <w>189</w>
-      <h>126</h>
+      <x>30</x>
+      <y>486</y>
+      <w>126</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>AssignmentDTO
 --
+id : int;
+description : String;
+date : Date;
+ship : Uri
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>252</x>
-      <y>981</y>
-      <w>450</w>
-      <h>126</h>
+      <x>168</x>
+      <y>762</y>
+      <w>300</w>
+      <h>84</h>
     </coordinates>
     <panel_attributes>ShipResource
 --
@@ -557,10 +590,10 @@ createShip(ship : JSONObject) : JSONObject
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>936</x>
-      <y>981</y>
-      <w>189</w>
-      <h>63</h>
+      <x>624</x>
+      <y>762</y>
+      <w>126</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>interface
 ListShip
@@ -571,24 +604,24 @@ getShip(id : int)</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>936</x>
-      <y>1089</y>
-      <w>189</w>
-      <h>63</h>
+      <x>624</x>
+      <y>834</y>
+      <w>126</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>interface
 AddShip
 --
-createShip(ship : Ship)</panel_attributes>
+createShip(shipDTO : ShipDTO)lö</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>909</x>
-      <y>936</y>
-      <w>765</w>
-      <h>270</h>
+      <x>606</x>
+      <y>732</y>
+      <w>510</w>
+      <h>180</h>
     </coordinates>
     <panel_attributes>al
 --
@@ -599,10 +632,10 @@ layer=-1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1188</x>
-      <y>1035</y>
-      <w>153</w>
-      <h>63</h>
+      <x>792</x>
+      <y>798</y>
+      <w>102</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>ShipController
 --
@@ -612,10 +645,10 @@ layer=-1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1404</x>
-      <y>1026</y>
-      <w>189</w>
-      <h>81</h>
+      <x>936</x>
+      <y>792</y>
+      <w>126</w>
+      <h>54</h>
     </coordinates>
     <panel_attributes>service
 ShipService
@@ -626,10 +659,10 @@ ShipService
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>1755</x>
-      <y>945</y>
-      <w>693</w>
-      <h>261</h>
+      <x>1170</x>
+      <y>738</y>
+      <w>462</w>
+      <h>174</h>
     </coordinates>
     <panel_attributes>EmptyPackage
 --
@@ -640,10 +673,10 @@ layer=-1</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1800</x>
-      <y>1035</y>
-      <w>189</w>
-      <h>90</h>
+      <x>1200</x>
+      <y>798</y>
+      <w>126</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>interface
 ShipCatalog
@@ -655,26 +688,26 @@ ShipCatalog
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2160</x>
-      <y>1026</y>
-      <w>189</w>
-      <h>108</h>
+      <x>1440</x>
+      <y>792</y>
+      <w>126</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>Entity
 Ship
 --
 id : int
 name : String
-AssignmentState : boolean</panel_attributes>
+assignmentState : boolean</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>2772</x>
-      <y>1053</y>
-      <w>189</w>
-      <h>63</h>
+      <x>1848</x>
+      <y>810</y>
+      <w>126</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>Repository
 ShipRepo
@@ -685,10 +718,10 @@ ShipRepo
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>2340</x>
-      <y>1071</y>
-      <w>450</w>
-      <h>36</h>
+      <x>1560</x>
+      <y>822</y>
+      <w>300</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 manages</panel_attributes>
@@ -697,22 +730,22 @@ manages</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1890</x>
-      <y>963</y>
-      <w>963</w>
-      <h>108</h>
+      <x>1260</x>
+      <y>750</y>
+      <w>660</w>
+      <h>72</h>
     </coordinates>
-    <panel_attributes>lt=&lt;&lt;-
+    <panel_attributes>lt=&lt;&lt;.
 realizes</panel_attributes>
-    <additional_attributes>10.0;80.0;10.0;20.0;1050.0;20.0;1050.0;100.0</additional_attributes>
+    <additional_attributes>10.0;80.0;10.0;20.0;1080.0;20.0;1080.0;100.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1584</x>
-      <y>1044</y>
-      <w>234</w>
-      <h>36</h>
+      <x>1056</x>
+      <y>804</y>
+      <w>156</w>
+      <h>24</h>
     </coordinates>
     <panel_attributes>lt=&lt;..
 Event</panel_attributes>
@@ -721,10 +754,10 @@ Event</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1584</x>
-      <y>1080</y>
-      <w>234</w>
-      <h>27</h>
+      <x>1056</x>
+      <y>828</y>
+      <w>156</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>240.0;10.0;10.0;10.0</additional_attributes>
@@ -732,10 +765,10 @@ Event</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1332</x>
-      <y>1062</y>
-      <w>90</w>
-      <h>27</h>
+      <x>888</x>
+      <y>816</y>
+      <w>60</w>
+      <h>18</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>80.0;10.0;10.0;10.0</additional_attributes>
@@ -743,10 +776,10 @@ Event</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>1341</x>
-      <y>1062</y>
-      <w>18</w>
-      <h>18</h>
+      <x>894</x>
+      <y>816</y>
+      <w>12</w>
+      <h>12</h>
     </coordinates>
     <panel_attributes>type=termination</panel_attributes>
     <additional_attributes/>
@@ -754,10 +787,10 @@ Event</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1287</x>
-      <y>279</y>
-      <w>477</w>
-      <h>765</h>
+      <x>858</x>
+      <y>294</y>
+      <w>318</w>
+      <h>510</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;100.0;510.0;100.0;510.0;660.0;270.0;660.0;270.0;830.0</additional_attributes>
@@ -765,10 +798,10 @@ Event</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1116</x>
-      <y>999</y>
-      <w>90</w>
-      <h>90</h>
+      <x>744</x>
+      <y>774</y>
+      <w>60</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;50.0;10.0;50.0;80.0;80.0;80.0</additional_attributes>
@@ -776,10 +809,10 @@ Event</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1116</x>
-      <y>1062</y>
-      <w>63</w>
-      <h>99</h>
+      <x>744</x>
+      <y>816</y>
+      <w>42</w>
+      <h>66</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;90.0;50.0;90.0;50.0;10.0</additional_attributes>
@@ -787,10 +820,10 @@ Event</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>126</x>
-      <y>369</y>
-      <w>1377</w>
-      <h>243</h>
+      <x>84</x>
+      <y>354</y>
+      <w>918</w>
+      <h>162</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 uses</panel_attributes>
@@ -799,10 +832,10 @@ uses</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>144</x>
-      <y>1098</y>
-      <w>1377</w>
-      <h>189</h>
+      <x>96</x>
+      <y>840</y>
+      <w>918</w>
+      <h>126</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 uses</panel_attributes>
@@ -811,10 +844,10 @@ uses</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>693</x>
-      <y>1008</y>
-      <w>261</w>
-      <h>63</h>
+      <x>462</x>
+      <y>780</y>
+      <w>174</w>
+      <h>42</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>270.0;10.0;80.0;10.0;80.0;50.0;10.0;50.0</additional_attributes>
@@ -822,10 +855,10 @@ uses</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>693</x>
-      <y>1044</y>
-      <w>261</w>
-      <h>90</h>
+      <x>462</x>
+      <y>804</y>
+      <w>174</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
     <additional_attributes>270.0;80.0;80.0;80.0;80.0;10.0;10.0;10.0</additional_attributes>
@@ -833,10 +866,10 @@ uses</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>711</x>
-      <y>1044</y>
-      <w>18</w>
-      <h>18</h>
+      <x>474</x>
+      <y>804</y>
+      <w>12</w>
+      <h>12</h>
     </coordinates>
     <panel_attributes>type=termination</panel_attributes>
     <additional_attributes/>
