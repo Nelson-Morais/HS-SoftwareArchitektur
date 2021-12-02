@@ -1,5 +1,6 @@
 package org.swa.boundary.entity;
 
+import io.quarkus.logging.Log;
 import org.swa.assignments.bl.AssignmentEntity;
 
 import java.net.URI;
@@ -7,13 +8,14 @@ import java.time.LocalDate;
 
 public class AssignmentDTO {
 
-    private int id;
+    private long id;
     private String description;
     private LocalDate date;
     private URI ship;
 
+    public AssignmentDTO(){}
 
-    public AssignmentDTO(int id, String description, LocalDate date, URI ship){
+    public AssignmentDTO(long id, String description, LocalDate date, URI ship){
         setId(id);
         setDescription(description);
         setDate(date);
@@ -21,7 +23,7 @@ public class AssignmentDTO {
 
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -45,7 +47,7 @@ public class AssignmentDTO {
         this.description = description;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -54,19 +56,21 @@ public class AssignmentDTO {
     }
 
 
-    public static class AssignmentDTOConvertet{
+    public static class AssignmentDTOConverter {
 
         public static AssignmentEntity toAssignment(AssignmentDTO assignmentDTO){
             AssignmentEntity assignmentEntity= new AssignmentEntity();
-            assignmentEntity.setId(assignmentDTO.getId());
-            assignmentEntity.setDate(assignmentDTO.getDate());
+
+            assignmentEntity.setDate(LocalDate.now());
             assignmentEntity.setDescription(assignmentDTO.getDescription());
-            assignmentEntity.setShip(assignmentDTO.getShip());
+            assignmentEntity.setShip(null);
+
             return assignmentEntity;
 
         }
 
         public static AssignmentDTO toDTO(AssignmentEntity assignment){
+            Log.info("AssignmentDTOConverter toDTO");
             return new AssignmentDTO(assignment.getId(), assignment.getDescription(), assignment.getDate(), assignment.getShip());
         }
 

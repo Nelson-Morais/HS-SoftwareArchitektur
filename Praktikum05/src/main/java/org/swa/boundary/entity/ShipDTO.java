@@ -4,18 +4,20 @@ import org.swa.ships.bl.Ship;
 
 public class ShipDTO {
 
-    private int id;
+    private long id;
     private String name;
     private boolean AssignmentStatus;
 
 
-    public ShipDTO(int id, String name, boolean assignmentState){
+    public ShipDTO(){}
+
+    public ShipDTO(long id, String name, boolean assignmentState){
         setId(id);
         setName(name);
         setAssignmentState(assignmentState);
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -27,7 +29,7 @@ public class ShipDTO {
         return AssignmentStatus;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -42,18 +44,15 @@ public class ShipDTO {
 
     public static class ShipDTOConverter{
 
-        public static ShipDTO toDTO(Ship ship){
-
-            return new ShipDTO(ship.getId(), ship.getName(), ship.isAssignmentState());
-        }
-
         public static Ship toShip(ShipDTO shipDTO){
             Ship ship = new Ship();
-            ship.setId(shipDTO.getId());
             ship.setName(shipDTO.getName());
-            ship.setAssignmentState(shipDTO.isAssignmentStatus());
+            ship.setAssignmentState(false);
             return ship;
         }
 
+        public static ShipDTO toDTO(Ship ship){
+            return new ShipDTO(ship.getId(), ship.getName(), ship.isAssignmentState());
+        }
     }
 }

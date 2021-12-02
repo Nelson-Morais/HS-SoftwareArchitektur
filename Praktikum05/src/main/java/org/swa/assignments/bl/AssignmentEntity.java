@@ -4,19 +4,22 @@ package org.swa.assignments.bl;
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.net.URI;
 import java.time.LocalDate;
 
 @Entity
-public class AssignmentEntity extends PanacheEntity {
+public class AssignmentEntity{
 
-    private int id;
+    @Id
+    @GeneratedValue private long id;
     private String description;
     private LocalDate date;
     private URI ship;
 
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -32,7 +35,7 @@ public class AssignmentEntity extends PanacheEntity {
         return ship;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

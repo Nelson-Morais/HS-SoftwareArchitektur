@@ -2,11 +2,12 @@ package org.swa.assignments.bl;
 
 import org.swa.boundary.entity.AssignmentDTO;
 
-public interface AssignmentCatalog {
+import java.util.Collection;
 
-    AssignmentEntity getAssignment(int id);
-    void createAssignment(AssignmentEntity assignmentEntity);
-    void editAssignment(AssignmentEntity assignmentEntity);
-    void deleteAssignmen(int id);
+public interface AssignmentCatalog {
+    Collection<AssignmentEntity> getAssignments();
+    AssignmentEntity getAssignment(long id);
+    void presistAssignment(AssignmentEntity assignmentEntity);
+    boolean deleteAssignmen(long id);
 
 }

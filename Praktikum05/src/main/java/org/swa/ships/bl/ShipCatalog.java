@@ -1,7 +1,10 @@
 package org.swa.ships.bl;
 
+import java.util.Collection;
+
 public interface ShipCatalog {
 
-    Ship getShip(int id);
+    Collection<Ship> getShips();
+    Ship getShip(long id);
     void createShip(Ship ship);
 }

@@ -3,15 +3,18 @@ package org.swa.ships.bl;
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
 @Entity
-public class Ship extends PanacheEntity {
+public class Ship {
 
-    private int id;
+
+    @Id @GeneratedValue private long id;
     private String name;
     private boolean assignmentState;
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -23,7 +26,7 @@ public class Ship extends PanacheEntity {
         return assignmentState;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
