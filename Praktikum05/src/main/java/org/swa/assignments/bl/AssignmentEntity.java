@@ -3,9 +3,7 @@ package org.swa.assignments.bl;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.net.URI;
 import java.time.LocalDate;
 
@@ -13,7 +11,13 @@ import java.time.LocalDate;
 public class AssignmentEntity{
 
     @Id
-    @GeneratedValue private long id;
+    @SequenceGenerator(
+            name = "assignmentGenerator",
+            sequenceName = "assignment_id_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "assignmentGenerator")
+    private long id;
     private String description;
     private LocalDate date;
     private URI ship;

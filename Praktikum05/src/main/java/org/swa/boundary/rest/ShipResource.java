@@ -7,8 +7,10 @@ import org.swa.ships.al.ShipController;
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.*;
+import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriInfo;
 import java.util.Collection;
 
 @Path("/ships")
@@ -16,6 +18,8 @@ import java.util.Collection;
 @Consumes(MediaType.APPLICATION_JSON)
 public class ShipResource {
 
+    @Context
+    UriInfo uriInfo;
 
     @Inject
     ShipController shipController;

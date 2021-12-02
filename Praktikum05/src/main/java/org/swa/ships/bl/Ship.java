@@ -1,16 +1,22 @@
 package org.swa.ships.bl;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
-public class Ship {
+public class Ship extends PanacheEntityBase {
 
 
-    @Id @GeneratedValue private long id;
+    @Id
+    @SequenceGenerator(
+            name = "shipSequence",
+            sequenceName = "ship_id_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "shipSequence")
+    private long id;
     private String name;
     private boolean assignmentState;
 

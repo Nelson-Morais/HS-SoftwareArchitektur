@@ -23,9 +23,9 @@ public class AssignmentService {
     AssignmentRepo assignmentRepo;
 
 
-    public Collection<AssignmentDTO> getAssignments(){
+    public Collection<AssignmentDTO> getAssignments() {
         List<AssignmentDTO> assignments = new ArrayList<>();
-        for(AssignmentEntity el : assignmentRepo.getAssignments()){
+        for (AssignmentEntity el : assignmentRepo.getAssignments()) {
             assignments.add(AssignmentDTO.AssignmentDTOConverter.toDTO(el));
         }
         return assignments;
@@ -41,7 +41,7 @@ public class AssignmentService {
 
     public AssignmentDTO getAssignment(long id) {
         Log.info("AssignmentService getAssignment()");
-        if(assignmentRepo.getAssignment(id) != null){
+        if (assignmentRepo.getAssignment(id) != null) {
             return AssignmentDTO.AssignmentDTOConverter.toDTO(assignmentRepo.getAssignment(id));
         }
         return null;
@@ -51,14 +51,16 @@ public class AssignmentService {
     public void editAssignment(AssignmentDTO assignmentDTO) {
 
         AssignmentEntity assignmentEntity = assignmentRepo.getAssignment(assignmentDTO.getId());
-        if(!assignmentEntity.getDescription().equals(assignmentDTO.getDescription())){
-            assignmentEntity.setDescription(assignmentDTO.getDescription());
+        if (assignmentEntity != null) {
+            if (!assignmentEntity.getDescription().equals(assignmentDTO.getDescription())) {
+                assignmentEntity.setDescription(assignmentDTO.getDescription());
 
+            }
+            if (assignmentEntity.getShip() != assignmentDTO.getShip()) {
+                assignmentEntity.setShip(assignmentDTO.getShip());
+            }
+            assignmentEntityEvent.fire(assignmentEntity);
         }
-        if(assignmentEntity.getShip() != assignmentDTO.getShip()){
-            assignmentEntity.setShip(assignmentDTO.getShip());
-        }
-        assignmentEntityEvent.fire(assignmentEntity);
     }
 
     @Transactional
