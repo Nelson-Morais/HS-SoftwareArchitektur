@@ -1,11 +1,14 @@
 package org.swa.gateway;
 
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 import org.swa.control.KundenService;
 import org.swa.entity.Adresse;
 import org.swa.entity.Kunde;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
@@ -13,7 +16,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-@ApplicationScoped
+@RequestScoped
 public class KundenRepository implements KundenService {
 
     @Inject
@@ -24,12 +27,12 @@ public class KundenRepository implements KundenService {
     public void kundenAnlegen(String name) {
         ArrayList<String> names = new ArrayList<>(Arrays.asList(name.split(",")));
         Kunde kunde;
-        if (names.size() != 2) {
-            kunde = new Kunde("John", "Doe");
-        } else {
+        if (names.size() == 2) {
+
             kunde = new Kunde(names.get(0), names.get(1));
+            entityManager.persist(kunde);
         }
-        entityManager.persist(kunde);
+
     }
 
     @Override
@@ -43,6 +46,7 @@ public class KundenRepository implements KundenService {
     }
 
     @Override
+    @Transactional
     public boolean kundenLoeschen(long kundennr) {
         Kunde kunde =kundeAbfragen(kundennr);
         if(kunde != null){
@@ -53,6 +57,7 @@ public class KundenRepository implements KundenService {
     }
 
     @Override
+    @Transactional
     public void adresseAnlegen(long kundennr, Adresse adresse) {
         Kunde kunde = kundeAbfragen(kundennr);
         if(kunde != null && kunde.getAdresse() == null){
@@ -61,6 +66,7 @@ public class KundenRepository implements KundenService {
     }
 
     @Override
+    @Transactional
     public void adresseAendern(long kundennr, Adresse adresse) {
         Kunde kunde = kundeAbfragen(kundennr);
         if(kunde != null){
@@ -70,10 +76,16 @@ public class KundenRepository implements KundenService {
 
     @Override
     public Adresse adresseAbfragen(long kundennr) {
-        return kundeAbfragen(kundennr).getAdresse();
+        Kunde kunde = kundeAbfragen(kundennr);
+        if(kunde != null){
+
+            return kundeAbfragen(kundennr).getAdresse();
+        }
+        return null;
     }
 
     @Override
+    @Transactional
     public boolean adresseLoeschen(long kundennr) {
         Kunde kunde = kundeAbfragen(kundennr);
         if(kunde != null && kunde.getAdresse() != null){

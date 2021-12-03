@@ -8,13 +8,15 @@ public class Kunde {
     private String vorname;
     private String nachname;
     private Adresse adresse;
+    private long id;
 
     public Kunde(){}
 
-    public Kunde(String vorname, String nachname){
+    public Kunde(long id, String vorname, String nachname){
         setVorname(vorname);
         setNachname(nachname);
-        adresse = null;
+        setId(id);
+        adresse = new Adresse();
     }
 
     public void setNachname(String nachname) {
@@ -29,6 +31,10 @@ public class Kunde {
         this.adresse = adresse;
     }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
     public String getNachname() {
         return nachname;
     }
@@ -41,5 +47,7 @@ public class Kunde {
         return adresse;
     }
 
-
+    public long getId() {
+        return id;
+    }
 }

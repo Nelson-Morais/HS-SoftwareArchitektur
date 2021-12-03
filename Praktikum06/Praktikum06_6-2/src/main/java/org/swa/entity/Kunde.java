@@ -11,6 +11,7 @@ public class Kunde {
 
     private String vorname;
     private String nachname;
+
     private Adresse adresse;
     private Long id;
 
@@ -42,7 +43,8 @@ public class Kunde {
         return vorname;
     }
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name="adress", nullable = true)
     public Adresse getAdresse() {
         return adresse;
     }

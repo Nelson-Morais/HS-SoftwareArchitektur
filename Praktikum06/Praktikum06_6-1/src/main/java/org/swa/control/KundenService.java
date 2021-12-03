@@ -5,6 +5,7 @@ import org.swa.entity.Adresse;
 import org.swa.entity.Kunde;
 
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.RequestScoped;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -19,10 +20,9 @@ public class KundenService {
 
     public void kundenAnlegen(String name) {
         ArrayList<String> names = new ArrayList<>(Arrays.asList(name.split(",")));
-        if (names.size() != 2) {
-            kunden.put(kundennr++, new Kunde("John", "Doe"));
-        } else {
-            kunden.put(kundennr++, new Kunde(names.get(0), names.get(1)));
+        if (names.size() == 2) {
+            kunden.put(kundennr, new Kunde(kundennr, names.get(0), names.get(1)));
+            kundennr++;
         }
     }
 
@@ -39,22 +39,34 @@ public class KundenService {
     }
 
     public void adresseAnlegen(long kundennr, Adresse adresse) {
-        if (kunden.get(kundennr).getAdresse() == null) {
+
+        Kunde kunde = kundeAbfragen(kundennr);
+        if(kunde != null){
+
+            kunden.get(kundennr).setAdresse(adresse);
+        }
+
+    }
+
+    public void adresseAendern(long kundennr, Adresse adresse) {
+        Kunde kunde = kundeAbfragen(kundennr);
+        if(kunde != null){
+
             kunden.get(kundennr).setAdresse(adresse);
         }
     }
 
-    public void adresseAendern(long kundennr, Adresse adresse) {
-        kunden.get(kundennr).setAdresse(adresse);
-    }
-
     public Adresse adresseAbfragen(long kundennr) {
+        Kunde kunde = kundeAbfragen(kundennr);
+        if(kunde != null){
 
-        return kunden.get(kundennr).getAdresse();
+            return kunde.getAdresse();
+        }
+        return null;
     }
 
     public boolean adresseLoeschen(long kundennr) {
-        if (kunden.get(kundennr).getAdresse() != null) {
+        if (kundeAbfragen(kundennr) != null){
             kunden.get(kundennr).setAdresse(null);
             return true;
         }
