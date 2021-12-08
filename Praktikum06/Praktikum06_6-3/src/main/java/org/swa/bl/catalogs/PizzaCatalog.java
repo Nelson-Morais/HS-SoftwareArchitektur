@@ -9,6 +9,6 @@ public interface PizzaCatalog {
     Collection<Pizza> listPizzas();
     Pizza listPizza(long PizzaId);
     void addPizza(Pizza pizza);
-    void deletePizza(long PizzaId);
+    boolean deletePizza(long PizzaId);
 
 }

@@ -2,12 +2,12 @@ package org.swa.bl.catalogs;
 
 import org.swa.bl.entity.Kunde;
 
-import java.util.Collection;
+import java.util.List;
 
 public interface KundenCatalog {
 
-    Collection<Kunde> listKunden();
-    Kunde listKunde(long kundennumer);
+    List<Kunde> listKunden();
+    Kunde getKunde(long kundennumer);
     void addKunde(Kunde kunde);
-    void deleteKunde(long kundennummer);
+    boolean deleteKunde(long kundennummer);
 }

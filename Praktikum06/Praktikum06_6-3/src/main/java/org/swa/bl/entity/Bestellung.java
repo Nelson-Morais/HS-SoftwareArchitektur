@@ -1,17 +1,20 @@
 package org.swa.bl.entity;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
 import javax.persistence.*;
 import java.util.Collection;
+import java.util.List;
 
 @Entity
-public class Bestellung extends PanacheEntity {
+public class Bestellung extends PanacheEntityBase {
 
 
     private long bestellungID;
-    @OneToMany
-    private Collection<Bestellposten> bestellposten;
+
+
+    private List<Bestellposten> bestellposten;
 
 
     public Bestellung(){}
@@ -29,7 +32,8 @@ public class Bestellung extends PanacheEntity {
         return bestellungID;
     }
 
-    public Collection<Bestellposten> getBestellposten() {
+    @OneToMany(targetEntity = Bestellposten.class, fetch = FetchType.EAGER)
+    public List<Bestellposten> getBestellposten() {
         return bestellposten;
     }
 
@@ -37,7 +41,7 @@ public class Bestellung extends PanacheEntity {
         this.bestellungID = bestellungID;
     }
 
-    public void setBestellposten(Collection<Bestellposten> bestellposten) {
+    public void setBestellposten(List<Bestellposten> bestellposten) {
         this.bestellposten = bestellposten;
     }
 }

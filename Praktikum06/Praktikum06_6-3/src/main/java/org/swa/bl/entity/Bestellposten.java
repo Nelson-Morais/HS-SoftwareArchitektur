@@ -1,23 +1,30 @@
 package org.swa.bl.entity;
 
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
+import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
 import javax.persistence.*;
 
 @Entity
-public class Bestellposten extends PanacheEntity {
+public class Bestellposten extends PanacheEntityBase {
 
     private long BestellpostenID;
-    @ManyToOne
+
     private Pizza pizza;
     private int menge;
 
     public Bestellposten(){}
 
+    public Bestellposten(Pizza pizza, int menge){
+        setMenge(menge);
+        setPizza(pizza);
+    }
+
     public int getMenge() {
         return menge;
     }
 
+    @ManyToOne
     public Pizza getPizza() {
         return pizza;
     }

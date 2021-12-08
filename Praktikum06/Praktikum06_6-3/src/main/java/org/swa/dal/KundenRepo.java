@@ -4,19 +4,21 @@ import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import org.swa.bl.catalogs.KundenCatalog;
 import org.swa.bl.entity.Kunde;
 
-import java.util.Collection;
+import javax.enterprise.context.RequestScoped;
+import java.util.List;
 
+@RequestScoped
 public class KundenRepo implements KundenCatalog, PanacheRepository<Kunde> {
 
 
     @Override
-    public Collection<Kunde> listKunden() {
+    public List<Kunde> listKunden() {
         return listAll();
     }
 
     @Override
-    public Kunde listKunde(long kundennumer) {
-        return listKunde(kundennumer);
+    public Kunde getKunde(long kundennumer) {
+        return getKunde(kundennumer);
     }
 
     @Override
@@ -25,7 +27,7 @@ public class KundenRepo implements KundenCatalog, PanacheRepository<Kunde> {
     }
 
     @Override
-    public void deleteKunde(long kundennummer) {
-        deleteById(kundennummer);
+    public boolean deleteKunde(long kundennummer) {
+        return deleteById(kundennummer);
     }
 }

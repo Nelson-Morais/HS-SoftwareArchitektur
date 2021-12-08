@@ -4,8 +4,11 @@ import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import org.swa.bl.catalogs.PizzaCatalog;
 import org.swa.bl.entity.Pizza;
 
+import javax.enterprise.context.RequestScoped;
+import javax.transaction.Transactional;
 import java.util.Collection;
 
+@RequestScoped
 public class PizzaRepo implements PizzaCatalog, PanacheRepository<Pizza> {
 
 
@@ -19,13 +22,15 @@ public class PizzaRepo implements PizzaCatalog, PanacheRepository<Pizza> {
         return findById(PizzaId);
     }
 
+    @Transactional
     @Override
     public void addPizza(Pizza pizza) {
         pizza.persist();
     }
 
+    @Transactional
     @Override
-    public void deletePizza(long PizzaId) {
-        deleteById(PizzaId);
+    public boolean deletePizza(long PizzaId) {
+       return deleteById(PizzaId);
     }
 }

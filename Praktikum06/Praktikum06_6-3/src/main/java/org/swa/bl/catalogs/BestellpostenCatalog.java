@@ -9,5 +9,5 @@ public interface BestellpostenCatalog {
     Collection<Bestellposten> listBestellposten();
     Bestellposten listBestellposte(long BestellpostenId);
     void addBestellposte(Bestellposten bestellposten);
-    void deleteBestellposten(long BestellpostenId);
+    boolean deleteBestellposten(long BestellpostenId);
 }

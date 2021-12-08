@@ -4,8 +4,10 @@ import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import org.swa.bl.catalogs.BestellungCatalog;
 import org.swa.bl.entity.Bestellung;
 
+import javax.enterprise.context.RequestScoped;
 import java.util.Collection;
 
+@RequestScoped
 public class BestellungRepo implements BestellungCatalog, PanacheRepository<Bestellung> {
 
     @Override
