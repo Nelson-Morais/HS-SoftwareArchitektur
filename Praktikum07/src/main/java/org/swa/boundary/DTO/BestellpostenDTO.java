@@ -5,7 +5,7 @@ import org.swa.bl.entity.Pizza;
 
 public class BestellpostenDTO {
 
-    private Pizza pizza;
+    private PizzaDTO pizza;
     private int menge;
 
     public BestellpostenDTO(){}
@@ -16,7 +16,7 @@ public class BestellpostenDTO {
     }
 
 
-   public Pizza getPizza() {
+   public PizzaDTO getPizza() {
         return pizza;
     }
 
