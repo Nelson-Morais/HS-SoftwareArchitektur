@@ -37,8 +37,10 @@ public class KundenResource {
 
     @PUT
     @Path("/{kundennummer}")
-    public Response addAdresse(@PathParam("kundennummer") long kundennumer, Adresse adresse){
-        if(kundenService.addAdresse(kundennumer, adresse)){
+    public Response addAdresse(@PathParam("kundennummer") long kundennumer,
+                               @QueryParam("straße") String straße, @QueryParam("nr") String nr,
+                               @QueryParam("ort") String ort, @QueryParam("plz") String plz){
+        if(kundenService.addAdresse(kundennumer, new Adresse(straße,nr,ort,plz))){
             return Response.ok().build();
         }
         return Response.notModified().build();

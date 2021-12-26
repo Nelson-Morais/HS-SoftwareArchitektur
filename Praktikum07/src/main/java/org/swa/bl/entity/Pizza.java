@@ -1,6 +1,5 @@
 package org.swa.bl.entity;
 
-import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
 import javax.persistence.*;
@@ -11,10 +10,12 @@ public class Pizza extends PanacheEntityBase {
     private long id;
     private String name;
     private String beschreibung;
+    private long preis;
 
     public Pizza(){}
 
-    public Pizza(String name, String beschreibung){
+    public Pizza(String name, String beschreibung, long preis){
+        setPreis(preis);
         setBeschreibung(beschreibung);
         setName(name);
     }
@@ -50,5 +51,13 @@ public class Pizza extends PanacheEntityBase {
 
     public void setBeschreibung(String beschreibung) {
         this.beschreibung = beschreibung;
+    }
+
+    public long getPreis() {
+        return preis;
+    }
+
+    public void setPreis(long preis) {
+        this.preis = preis;
     }
 }

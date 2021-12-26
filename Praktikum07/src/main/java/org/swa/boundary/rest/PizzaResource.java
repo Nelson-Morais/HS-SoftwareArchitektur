@@ -7,6 +7,7 @@ import org.swa.boundary.DTO.PizzaDTO;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.print.attribute.standard.Media;
+import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -28,8 +29,9 @@ public class PizzaResource {
     }
 
     @POST
-    public Response addPizza(PizzaDTO pizzaDTO){
-        pizzaService.addPizza(pizzaDTO);
+    @Transactional
+    public Response addPizza(@QueryParam("name") String name, @QueryParam("desc") String beschreibung, @QueryParam("preis") long preis){
+        pizzaService.addPizza(new PizzaDTO(name,beschreibung,preis));
         return Response.ok().build();
     }
 

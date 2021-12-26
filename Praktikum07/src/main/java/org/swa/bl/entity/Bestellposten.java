@@ -10,6 +10,7 @@ public class Bestellposten extends PanacheEntityBase {
 
     private long BestellpostenID;
 
+    @OneToOne
     private Pizza pizza;
     private int menge;
 

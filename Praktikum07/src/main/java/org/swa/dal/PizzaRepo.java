@@ -22,13 +22,13 @@ public class PizzaRepo implements PizzaCatalog, PanacheRepository<Pizza> {
         return findById(PizzaId);
     }
 
-    @Transactional
+
     @Override
     public void addPizza(Pizza pizza) {
         pizza.persist();
     }
 
-    @Transactional
+
     @Override
     public boolean deletePizza(long PizzaId) {
        return deleteById(PizzaId);
