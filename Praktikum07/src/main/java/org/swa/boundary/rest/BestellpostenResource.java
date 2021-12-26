@@ -9,10 +9,11 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-@RequestScoped
+
 @Path("/bestellposten")
-@Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
+
 public class BestellpostenResource {
 
     @Inject

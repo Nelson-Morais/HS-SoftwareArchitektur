@@ -6,16 +6,17 @@ import org.swa.bl.catalogs.KundenCatalog;
 import org.swa.bl.entity.Adresse;
 import org.swa.boundary.DTO.KundeDTO;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
 @Path("/kunde")
-@RequestScoped
-@Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
+@Consumes(MediaType.APPLICATION_JSON)
 public class KundenResource {
 
     @Inject
@@ -28,8 +29,9 @@ public class KundenResource {
     }
 
     @POST
-    public Response addKunde(KundeDTO kundeDTO){
-        kundenService.addKunde(kundeDTO);
+    @Transactional
+    public Response addKunde(@QueryParam("vn") String vn,@QueryParam("nn") String nn){
+        kundenService.addKunde(new KundeDTO(vn,nn));
         return Response.ok().build();
     }
 

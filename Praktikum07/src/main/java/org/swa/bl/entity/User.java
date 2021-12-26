@@ -1,5 +1,6 @@
 package org.swa.bl.entity;
 
+import com.sun.istack.NotNull;
 import io.quarkus.elytron.security.common.BcryptUtil;
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import io.quarkus.security.jpa.Password;
@@ -8,25 +9,29 @@ import io.quarkus.security.jpa.UserDefinition;
 import io.quarkus.security.jpa.Username;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.OneToOne;
+import javax.transaction.Transactional;
 
 
-@Entity
-@UserDefinition
-public class User extends PanacheEntity {
+//@Entity
+//@UserDefinition
+public class User /*extends PanacheEntity*/ {
 
-    @Username
+   /* @Username
     public String username;
     @Password
     public String password;
     @Roles
     public String role;
-    public Kunde kunde;
 
+
+    @Transactional
     public static void add(String username, String password,String role){
         User user = new User();
         user.username = username;
         user.password = BcryptUtil.bcryptHash(password);
         user.role = role;
         user.persist();
-    }
+    }*/
 }
