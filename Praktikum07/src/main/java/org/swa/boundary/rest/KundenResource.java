@@ -38,7 +38,9 @@ public class KundenResource {
     @Path("/me")
     @RolesAllowed("user")
     public Response getKunde(){
-        return Response.ok(securityIdentity.getPrincipal().getName()).build();
+    	Map<String,String> m = new HashMap<>();
+        m.put("username",sc.getPrincipal().getName());
+        return Response.ok(m).build();
     }
 
     @POST
