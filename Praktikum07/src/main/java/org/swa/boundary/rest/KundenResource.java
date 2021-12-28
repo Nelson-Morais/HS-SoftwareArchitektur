@@ -1,13 +1,15 @@
 package org.swa.boundary.rest;
 
 
+import io.quarkus.oidc.UserInfo;
+import io.quarkus.security.identity.SecurityIdentity;
 import org.swa.al.kunden.KundenService;
-import org.swa.bl.catalogs.KundenCatalog;
+
 import org.swa.bl.entity.Adresse;
 import org.swa.boundary.DTO.KundeDTO;
 
-import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.context.RequestScoped;
+
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import javax.ws.rs.*;
@@ -22,10 +24,21 @@ public class KundenResource {
     @Inject
     KundenService kundenService;
 
+    @Inject
+    SecurityIdentity securityIdentity;
+
+
 
     @GET
     public Response listKunden(){
         return Response.ok().entity(kundenService.listKunden()).build();
+    }
+
+    @GET
+    @Path("/me")
+    @RolesAllowed("user")
+    public Response getKunde(){
+        return Response.ok(securityIdentity.getPrincipal().getName()).build();
     }
 
     @POST
