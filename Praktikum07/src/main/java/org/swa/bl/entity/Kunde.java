@@ -11,13 +11,13 @@ import java.util.List;
 public class Kunde extends PanacheEntityBase {
 
     private long kundennummer;
-    private String vorname;
-    private String nachname;
+    private String username;
+
 
     @Embedded
     private Adresse adresse;
 
-
+    @OneToMany
     private List<Bestellung> bestellungen;
 
 
@@ -25,9 +25,9 @@ public class Kunde extends PanacheEntityBase {
         bestellungen = new ArrayList<>();
     }
 
-    public Kunde(String vorname, String nachname){
-        setVorname(vorname);
-        setNachname(nachname);
+    public Kunde(String name){
+        setUsername(name);
+
     }
 
 
@@ -55,20 +55,12 @@ public class Kunde extends PanacheEntityBase {
     }
 
 
-    public String getVorname() {
-        return vorname;
+    public String getUsername() {
+        return username;
     }
 
-    public String getNachname() {
-        return nachname;
-    }
-
-    public void setNachname(String nachname) {
-        this.nachname = nachname;
-    }
-
-    public void setVorname(String vorname) {
-        this.vorname = vorname;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public void setKundennummer(long kundennummer) {
@@ -79,7 +71,7 @@ public class Kunde extends PanacheEntityBase {
         this.adresse = adresse;
     }
 
-    public void setBestellungen(List<Bestellung> bestellungen) {
-        this.bestellungen = bestellungen;
+    public void addBestellung(Bestellung bestellungen) {
+        this.bestellungen.add(bestellungen);
     }
 }

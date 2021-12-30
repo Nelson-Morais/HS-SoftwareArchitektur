@@ -33,4 +33,9 @@ public class PizzaRepo implements PizzaCatalog, PanacheRepository<Pizza> {
     public boolean deletePizza(long PizzaId) {
        return deleteById(PizzaId);
     }
+
+    @Override
+    public Pizza findPizzaByName(String name) {
+        return find("name",name).firstResult();
+    }
 }

@@ -31,7 +31,7 @@ public class BestellpostenRepo implements BestellpostenCatalog, PanacheRepositor
     @Transactional
     @Override
     public void addBestellposte(Bestellposten bestellposten) {
-        bestellposten.getPizza().persist();
+        //bestellposten.getPizza().persist();
         bestellposten.persist();
         log.info(bestellposten.getMenge());
     }

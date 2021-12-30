@@ -1,9 +1,9 @@
 package org.swa.al.bestellposten;
 
-import org.swa.boundary.DTO.BestellpostenDTO;
+import org.swa.bl.entity.Bestellposten;
 
 public interface AddBestellposten {
 
-    void addBestellposten(BestellpostenDTO bestellpostenDTO);
+    void addBestellposten(Bestellposten bestellposten);
 
 }

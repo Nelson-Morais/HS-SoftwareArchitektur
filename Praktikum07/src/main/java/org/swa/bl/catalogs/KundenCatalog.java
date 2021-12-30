@@ -10,4 +10,5 @@ public interface KundenCatalog {
     Kunde getKunde(long kundennumer);
     void addKunde(Kunde kunde);
     boolean deleteKunde(long kundennummer);
+    Kunde getKundeByName(String name);
 }

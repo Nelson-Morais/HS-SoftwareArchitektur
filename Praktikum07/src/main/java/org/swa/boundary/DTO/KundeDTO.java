@@ -5,40 +5,32 @@ import org.swa.bl.entity.Kunde;
 
 public class KundeDTO {
 
-    private String vorname;
-    private String nachname;
+    private String name;
+
 
     public KundeDTO(){}
 
-    public KundeDTO(String vorname, String nachname){
-
-    }
-
-    public String getNachname() {
-        return nachname;
-    }
-
-    public String getVorname() {
-        return vorname;
+    public KundeDTO(String name){
+        this.name = name;
     }
 
 
-    public void setNachname(String nachname) {
-        this.nachname = nachname;
+    public String getName() {
+        return name;
     }
 
-    public void setVorname(String vorname) {
-        this.vorname = vorname;
+    public void setName(String vorname) {
+        this.name = vorname;
     }
 
     public static class ConverterKundeDTO{
 
         public static KundeDTO toDTO(Kunde kunde){
-            return new KundeDTO(kunde.getVorname(), kunde.getVorname());
+            return new KundeDTO(kunde.getUsername());
         }
 
         public static Kunde toKunde(KundeDTO kundeDTO){
-            return new Kunde(kundeDTO.getVorname(),kundeDTO.getNachname());
+            return new Kunde(kundeDTO.getName());
         }
     }
 }

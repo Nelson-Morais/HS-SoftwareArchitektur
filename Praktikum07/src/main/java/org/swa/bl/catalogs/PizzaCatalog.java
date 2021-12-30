@@ -10,5 +10,6 @@ public interface PizzaCatalog {
     Pizza listPizza(long PizzaId);
     void addPizza(Pizza pizza);
     boolean deletePizza(long PizzaId);
+    Pizza findPizzaByName(String name);
 
 }

@@ -4,6 +4,7 @@ import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -13,11 +14,16 @@ public class Bestellung extends PanacheEntityBase {
 
     private long bestellungID;
 
-
+    @OneToMany
     private List<Bestellposten> bestellposten;
 
+    private long gesamtpreis = 0;
 
-    public Bestellung(){}
+
+    public Bestellung(){
+        bestellposten = new ArrayList<>();
+    }
+
 
 
     @Id
@@ -43,5 +49,26 @@ public class Bestellung extends PanacheEntityBase {
 
     public void setBestellposten(List<Bestellposten> bestellposten) {
         this.bestellposten = bestellposten;
+        calculatePreis();
+    }
+
+    public void addBestellposten(Bestellposten bestellposten){
+        this.bestellposten.add(bestellposten);
+        calculatePreis();
+    }
+
+    private void calculatePreis(){
+        gesamtpreis = 0;
+        for(int i = 0; i < getBestellposten().size(); i++){
+            gesamtpreis += getBestellposten().get(i).getPreis();
+        }
+    }
+
+    public long getGesamtpreis() {
+        return gesamtpreis;
+    }
+
+    public void setGesamtpreis(long gesamtpreis) {
+        this.gesamtpreis = gesamtpreis;
     }
 }

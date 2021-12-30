@@ -1,6 +1,8 @@
 package org.swa.boundary.rest;
 
+import io.quarkus.security.identity.SecurityIdentity;
 import org.swa.al.bestellposten.BestellpostenService;
+import org.swa.bl.entity.Bestellposten;
 import org.swa.boundary.DTO.BestellpostenDTO;
 
 import javax.enterprise.context.RequestScoped;
@@ -19,14 +21,19 @@ public class BestellpostenResource {
     @Inject
     BestellpostenService bestellpostenService;
 
+    @Inject
+    SecurityIdentity sc;
+
+
     @GET
     public Response listBestellposten(){
-        return Response.ok().entity(bestellpostenService.listBestellposten(0)).build();
+        //return Response.ok().entity(bestellpostenService.listBestellposten()).build();
+        return Response.noContent().build();
     }
 
     @POST
-    public Response addBestellposten(BestellpostenDTO bestellpostenDTO){
-        bestellpostenService.addBestellposten(bestellpostenDTO);
+    public Response addBestellposten(Bestellposten bestellposten){
+        bestellpostenService.addBestellposten(bestellposten);
         return Response.ok().build();
 
     }

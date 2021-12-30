@@ -13,12 +13,14 @@ public class Bestellposten extends PanacheEntityBase {
     @OneToOne
     private Pizza pizza;
     private int menge;
+    private long preis;
 
     public Bestellposten(){}
 
     public Bestellposten(Pizza pizza, int menge){
         setMenge(menge);
         setPizza(pizza);
+        setPreis(pizza.getPreis()*menge);
     }
 
     public int getMenge() {
@@ -52,5 +54,13 @@ public class Bestellposten extends PanacheEntityBase {
 
     public void setBestellpostenID(long bestellpostenID) {
         BestellpostenID = bestellpostenID;
+    }
+
+    public long getPreis() {
+        return preis;
+    }
+
+    public void setPreis(long preis) {
+        this.preis = preis;
     }
 }

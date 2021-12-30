@@ -5,24 +5,26 @@ import org.swa.bl.entity.Pizza;
 
 public class BestellpostenDTO {
 
-    private Pizza pizza;
+    private String name;
     private int menge;
+    private long preis;
 
     public BestellpostenDTO(){}
 
     public BestellpostenDTO(Pizza pizza, int menge){
         setMenge(menge);
-        setPizza(pizza);
+        setPizzaname(pizza.getName());
+        setPreis(pizza.getPreis()*menge);
     }
 
 
-   public Pizza getPizza() {
-        return pizza;
+   public String getPizzaname() {
+        return name;
     }
 
 
-    public void setPizza(Pizza pizza) {
-        this.pizza = pizza;
+    public void setPizzaname(String name) {
+        this.name = name;
     }
 
    public int getMenge() {
@@ -32,15 +34,23 @@ public class BestellpostenDTO {
         this.menge = menge;
     }
 
+    public long getPreis() {
+        return preis;
+    }
+
+    public void setPreis(long preis) {
+        this.preis = preis;
+    }
+
     public static class BestellpostenConverter{
 
         public static BestellpostenDTO toDTO(Bestellposten bestellposten){
             return new BestellpostenDTO(bestellposten.getPizza(), bestellposten.getMenge());
         }
 
-        public static Bestellposten toBestellposten(BestellpostenDTO bestellpostenDTO){
-            return new Bestellposten(bestellpostenDTO.getPizza(), bestellpostenDTO.getMenge());
-        }
+        /*public static Bestellposten toBestellposten(BestellpostenDTO bestellpostenDTO){
+            return new Bestellposten(bestellpostenDTO.getPizzaname(), bestellpostenDTO.getMenge());
+        }*/
 
 
     }

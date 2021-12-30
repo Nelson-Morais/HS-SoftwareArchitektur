@@ -21,6 +21,7 @@ public class KundenRepo implements KundenCatalog, PanacheRepository<Kunde> {
         return getKunde(kundennumer);
     }
 
+
     @Override
     public void addKunde(Kunde kunde) {
         kunde.persist();
@@ -29,5 +30,11 @@ public class KundenRepo implements KundenCatalog, PanacheRepository<Kunde> {
     @Override
     public boolean deleteKunde(long kundennummer) {
         return deleteById(kundennummer);
+    }
+
+
+    @Override
+    public Kunde getKundeByName(String name) {
+        return find("username",name).firstResult();
     }
 }

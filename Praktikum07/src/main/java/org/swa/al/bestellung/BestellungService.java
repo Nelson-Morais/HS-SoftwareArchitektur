@@ -2,6 +2,7 @@ package org.swa.al.bestellung;
 
 import org.swa.bl.catalogs.BestellungCatalog;
 import org.swa.bl.entity.Bestellung;
+import org.swa.bl.entity.Kunde;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -15,8 +16,8 @@ public class BestellungService implements AddBestellung, ListBestellung{
 
 
     @Override
-    public void addBestellung(Bestellung bestellung) {
-        bestellungCatalog.addBestellung(bestellung);
+    public void addBestellung(Kunde k) {
+        bestellungCatalog.addBestellung(k);
     }
 
     @Override
