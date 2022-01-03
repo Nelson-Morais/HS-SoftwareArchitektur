@@ -80,6 +80,13 @@ public class KundenResource {
         return Response.notModified().build();
     }
 
+    @GET
+    @Path("/me/adresse")
+    @RolesAllowed("user")
+    public Response getAdresse(){
+        return Response.ok(kc.getKundeByName(securityIdentity.getPrincipal().getName()).getAdresse()).build();
+    }
+
 
     @Transactional
     public Kunde createKunde(){
