@@ -4,20 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kunde {kunde.username}</title>
+    <base href="./kunden"/>
+    <title>Kunde</title>
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
-<body>
+<body class="bg-light">
 <div class="container">
-    <h1>Hallo {kunde.username}</h1>
-    <form action="./me/adresse" method="POST">
-        <label for="strasse">Strasse</label><input id="strasse" name="strasse" type="text" value="{kunde.getAdresse().getStrasse() ?: ''}">
-        <label for="hausNummer">Hausnummer</label><input id="hausnummer" name="hausnummer" type="text" value="{kunde.getAdresse().getHausNummer() ?: ''}">
-        <label for="plz">Plz</label><input id="plz" name="plz" type="text" value="{kunde.getAdresse().getPlz() ?: ''}">
-        <label for="ort">Ort</label><input id="ort" name="ort" type="text" value="{kunde.getAdresse().getOrt() ?: ''}">
 
-        <input type="submit" value="Submit">
+    <h1>Hallo {kunde.username}</h1>
+
+    <form action="./me/logout" method="POST">
+        <input class="btn btn-danger" type="submit" value="logout">
     </form>
 
     <table class="table">
@@ -28,7 +26,7 @@
         <tbody>
         {#for bestellung in kunde.getBestellungen()}
         <tr>
-            <td><a href="/bestellungen/{bestellung.id}">{bestellung.id}</a></td>
+            <td><a href="/bestellungen/{bestellung.getBestellungID()}">{bestellung.getBestellungID()}</a></td>
             <td>{bestellung.getBestellposten().size() ?: 0}</td>
         </tr>
         {/for}
@@ -36,13 +34,27 @@
         <tfoot>
         <tr>
             <td>
-                <form action="/bestellungen" method="POST">
-                    <input type="submit" value="Neue Bestellung">
+                <form action="./me" method="POST">
+                    <input class="btn btn-success" type="submit" value="Neue Bestellung">
                 </form>
             </td>
         </tr>
         </tfoot>
     </table>
+
+
+    <form action="./me/adresse" method="POST">
+        <label for="strasse">Strasse</label><input id="strasse" name="strasse" type="text" value="{kunde.getAdresse().getStrasse() ?: ''}">
+        <br>
+        <label for="hausNummer">Hausnummer</label><input id="hausnummer" name="hausnummer" type="text" value="{kunde.getAdresse().getHausNummer() ?: ''}">
+        <br>
+        <label for="plz">Plz</label><input id="plz" name="plz" type="text" value="{kunde.getAdresse().getPlz() ?: ''}">
+        <br>
+        <label for="ort">Ort</label><input id="ort" name="ort" type="text" value="{kunde.getAdresse().getOrt() ?: ''}">
+        <br>
+        <input class="btn btn-primary" type="submit" value="Submit">
+    </form>
+
 </div>
 </body>
 </html>
