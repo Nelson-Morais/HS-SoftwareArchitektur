@@ -21,7 +21,7 @@ public class PizzaPage {
     @Inject
     PizzaCatalog pc;
 
-    @CheckedTemplate
+    @CheckedTemplate(requireTypeSafeExpressions = false)
     public static class Templates {
         public static native TemplateInstance formpizza();
         public static native TemplateInstance pizzen();

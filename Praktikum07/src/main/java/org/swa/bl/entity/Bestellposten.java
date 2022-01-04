@@ -18,8 +18,8 @@ public class Bestellposten extends PanacheEntityBase {
     public Bestellposten(){}
 
     public Bestellposten(Pizza pizza, int menge){
-        setMenge(menge);
         setPizza(pizza);
+        setMenge(menge);
         setPreis(pizza.getPreis()*menge);
     }
 
@@ -34,6 +34,7 @@ public class Bestellposten extends PanacheEntityBase {
 
     public void setMenge(int menge) {
         this.menge = menge;
+        setPreis(menge*this.getPizza().getPreis());
     }
 
     public void setPizza(Pizza pizza) {

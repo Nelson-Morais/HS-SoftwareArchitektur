@@ -5,6 +5,25 @@
     <title>Title</title>
 </head>
 <body>
+<div class="container">
+<table class="table">
+    <thead>
+    <th>Bestellnummer</th>
+    <th>Bestellposten</th>
+    <th>Gesamtpreis</th>
+    </thead>
+    <tbody>
+    {#for bestellung in bestellungen}
+    <tr>
+        <td>{bestellung.getBestellungID()}</a></td>
+        <td>{bestellung.getBestellposten().size() ?: 0}</td>
+        <td>{bestellung.getGeamtpreis()}</td>
+    </tr>
+    {/for}
+    </tbody>
+
+</table>
+</div>
 
 </body>
 </html>

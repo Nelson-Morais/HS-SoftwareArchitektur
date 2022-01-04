@@ -12,7 +12,7 @@
 <body class="bg-light">
 <div class="container">
 
-    <h1>Hallo {kunde.username}</h1>
+    <h1>Hallo {kunde.getUsername()}</h1>
 
     <form action="./me/logout" method="POST">
         <input class="btn btn-danger" type="submit" value="logout">
@@ -22,12 +22,14 @@
         <thead>
         <th>Bestellnummer</th>
         <th>Bestellposten</th>
+        <th>Gesamtpreis</th>
         </thead>
         <tbody>
         {#for bestellung in kunde.getBestellungen()}
         <tr>
-            <td><a href="/bestellungen/{bestellung.getBestellungID()}">{bestellung.getBestellungID()}</a></td>
+            <td><a href="/bestellungen/{bestellung.getBestellungID()}">Bestellung {bestellung.getBestellungID()}</a></td>
             <td>{bestellung.getBestellposten().size() ?: 0}</td>
+            <td>{bestellung.getGesamtpreis()}</td>
         </tr>
         {/for}
         </tbody>

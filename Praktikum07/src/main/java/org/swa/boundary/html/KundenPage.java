@@ -4,7 +4,6 @@ package org.swa.boundary.html;
 import io.quarkus.qute.CheckedTemplate;
 import io.quarkus.qute.TemplateInstance;
 import io.quarkus.security.identity.SecurityIdentity;
-import io.quarkus.security.jpa.Roles;
 import org.swa.bl.catalogs.BestellungCatalog;
 import org.swa.bl.catalogs.KundenCatalog;
 import org.swa.bl.entity.Adresse;

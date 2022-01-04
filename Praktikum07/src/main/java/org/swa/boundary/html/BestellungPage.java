@@ -8,6 +8,8 @@ import org.swa.bl.catalogs.BestellpostenCatalog;
 import org.swa.bl.catalogs.BestellungCatalog;
 import org.swa.bl.catalogs.KundenCatalog;
 import org.swa.bl.catalogs.PizzaCatalog;
+import org.swa.bl.entity.Bestellposten;
+import org.swa.bl.entity.Bestellung;
 import org.swa.bl.entity.Kunde;
 
 import javax.annotation.PostConstruct;
@@ -17,6 +19,7 @@ import javax.transaction.Transactional;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import javax.ws.rs.core.UriBuilder;
 
 @Path("/bestellungen")
 @Produces(MediaType.TEXT_HTML)
@@ -37,7 +40,7 @@ public class BestellungPage {
     @Inject
     PizzaCatalog pc;
 
-    @CheckedTemplate
+    @CheckedTemplate(requireTypeSafeExpressions = false)
     public static class Templates {
         public static native TemplateInstance bestellung();
         public static native TemplateInstance bestellungen();
@@ -61,7 +64,36 @@ public class BestellungPage {
     @RolesAllowed("user")
     @Path("{id}")
     public Response getBestellung(@PathParam("id") int id){
-        return Response.ok(Templates.bestellung().data("pizzas",pc.listPizzas()).data("bestellung",kc.getKundeByName(sc.getPrincipal().getName()).getBestellungen().get(id))).build();
+        return Response.ok(Templates.bestellung().data("pizzen",pc.listPizzas()).data("bestellung",bc.listBestellung(id))).build();
+    }
+
+    @POST
+    @RolesAllowed("user")
+    @Transactional
+    @Path("bestellposten/{id}")
+    public Response editBestellposten(@PathParam("id") long id, @FormParam("menge") int menge){
+        Bestellposten b = bpc.listBestellposte(id);
+        b.setMenge(menge);
+        b.setPreis(b.getPizza().getPreis()*menge);
+        b.persist();
+
+        return Response.seeOther(UriBuilder.fromResource(KundenPage.class).path(KundenPage.class, "getKunde").build(id)).build();
+    }
+
+
+    @POST
+    @RolesAllowed("user")
+    @Transactional
+    @Path("{id}/bestellposten%7D")
+    public Response addBestellposten(@PathParam("id") long id, @FormParam("pizzaname") String name, @FormParam("menge") int menge){
+        Bestellung b = bc.listBestellung(id);
+        Bestellposten b_post = new Bestellposten();
+        b_post.setPizza(pc.findPizzaByName(name));
+        b_post.setMenge(menge);
+        b_post.persist();
+        b.addBestellposten(b_post);
+        b.persist();
+        return Response.seeOther(UriBuilder.fromResource(BestellungPage.class).path(BestellungPage.class, "getBestellung").build(id)).build();
     }
 
 
